@@ -28,6 +28,9 @@
       <div class="input-group" style="margin:20px 0 20px 0 ">
         <input type="password" class="form-control" placeholder="password confirm" aria-describedby="basic-addon2" name="pw_confirm">
       </div>
+      <div class="input-group" style="margin:20px 0 20px 0 ">
+        <input type="text" class="form-control" placeholder="nickname" aria-describedby="basic-addon2" name="nickname">
+      </div>
       <div class="form-group" style="margin:20px 0 20px 0; width:196px;">
         <select class="form-control" id="sel1" name="age">
           <option>연령대</option>
@@ -40,7 +43,7 @@
       <div class="panel panel-default" style="width:196px;">
         <div class="panel-heading">회원구분</div>
         <div class="panel-body">
-          <label class="radio-inline"><input type="radio" name="status" value="일반">일반</label>
+          <label class="radio-inline"><input type="radio" name="authority" value="일반">일반</label>
           <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="status" value="기자">기자</label>
         </div>
       </div>

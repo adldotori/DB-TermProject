@@ -21,7 +21,7 @@
         </div>
         <div class="btn-group" role="group">
           <a href="news.php">
-          <button type="button" class="btn btn-default">뉴스보기</button></a>
+          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
       <div style="height:200px">&nbsp;</div>
