@@ -10,7 +10,10 @@
   </head>
   <body>
 <?php
-  echo"<script>alert('yeah!');location.href=\"login.php\"</script>";
+  $conn = mysqli_connect('localhost','root','taeho');
+  mysqli_select_db($conn,'DATABASE');
+  $result = mysqli_query($conn,'insert into account(id,pw) values(ID,password);');
+  echo"1<script>location.href=\"login.php\"</script>";
 ?>
   </body>
 </html>
