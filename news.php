@@ -31,16 +31,17 @@
           </tr>
           </thead>
           </table>
-          <div style="overflow:auto; height:70px; ">
-          <table class="table">
+          <div style="overflow:auto; max-height:350px;">
+          <table class="table" style="margin-bottom:0">
             <thead>
-              <th width="5%"></th>
-              <th scope="col"></th>
-              <th width="15%"></th>
-              <th width="9%"></th>
+              <col width="5%">
+              <col>
+              <col width="15%">
+              <col width="9%">
             </thead>
           <tbody>
             <!-- php로 다시 구현할 필요있음 -->
+            <!--반복문으로 아래와 같이..구현-->
             <tr onclick="location.href='news_view.php?newsID=1'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
               <th scope="row">1</th>
               <td>Mark</td>
@@ -76,4 +77,3 @@
       </div>
   </body>
 </html>
-test
