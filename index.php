@@ -40,37 +40,20 @@
           </tr>
           </thead>
           <tbody>
-            <!-- php로 다시 구현할 필요있음 -->
-            <tr onclick="location.href='news_view.php?newsID=1'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr onclick="location.href='news_view.php?newsID=2'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr onclick="location.href='news_view.php?newsID=3'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr onclick="location.href='news_view.php?newsID=4'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">4</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr onclick="location.href='news_view.php?newsID=5'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">5</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            <?php
+              $conn = mysqli_connect('localhost','root','taeho','database');
+              $query ="select * from news order by hits desc";
+              $result = mysqli_query($conn,$query);
+              for($i=0;$i<5;$i++){
+                $row = mysqli_fetch_array($result);
+                echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
+                  <th scope=\"row\">".$row['newsID']."</th>
+                  <td>".$row['title']."</td>
+                  <td>".$row['authorID']."</td>
+                  <td>".$row['hits']."</td>
+                  </tr>";
+              }
+            ?>
           </tbody>
         </table>
       </div>
