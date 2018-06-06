@@ -10,10 +10,14 @@
   </head>
   <body>
 <?php
-  $conn = mysqli_connect('localhost','root','taeho');
-  mysqli_select_db($conn,'DATABASE');
-  $result = mysqli_query($conn,'insert into account(id,pw) values(ID,password);');
-  echo"1<script>location.href=\"login.php\"</script>";
+  $id = $_POST["id"];
+  $pw = $_POST["pw"];
+
+  $conn = mysqli_connect('localhost','root','taeho','database');
+  $query ="select * from member where ID=$id and password=$pw";
+  $result = mysqli_fetch_array(mysqli_query($conn,$query));
+  echo $array[0].$array[1];
+  echo "<script>location.href=\"index.php\"< /script>";
 ?>
   </body>
 </html>
