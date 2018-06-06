@@ -36,7 +36,7 @@
           <option>연령대</option>
           <option>10대</option>
           <option>20대</option>
-          <option>30~40대</option>
+          <option>30-40대</option>
           <option>50대 이상</option>
         </select>
       </div>
