@@ -43,8 +43,8 @@
       <div class="panel panel-default" style="width:196px;">
         <div class="panel-heading">회원구분</div>
         <div class="panel-body">
-          <label class="radio-inline"><input type="radio" name="authority" value="일반">일반</label>
-          <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="status" value="기자">기자</label>
+          <label class="radio-inline"><input type="radio" name="authority" value="4">일반</label>
+          <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="authority" value="3">기자</label>
         </div>
       </div>
       <button type="submit" class="btn btn-default btn-lg">
