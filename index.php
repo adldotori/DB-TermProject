@@ -44,7 +44,8 @@
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from news order by hits desc";
               $result = mysqli_query($conn,$query);
-              while($row = mysqli_fetch_array($result)){
+              for($i=0;$i<5;$i++){
+                $row = mysqli_fetch_array($result);
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$row['newsID']."</th>
                   <td>".$row['title']."</td>
