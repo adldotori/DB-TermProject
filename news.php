@@ -42,7 +42,7 @@
           <tbody>
             <?php
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from news";
+              $query ="select * from news order by date desc";
               $result = mysqli_query($conn,$query);
               while($row = mysqli_fetch_array($result)){
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
