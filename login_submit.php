@@ -15,8 +15,11 @@
 
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query ="select * from member where ID=$id and password=$pw";
-  $result = mysqli_fetch_array(mysqli_query($conn,$query));
-  echo "<script>location.href=\"index.php\"< /script>";
+  $row = mysqli_fetch_array(mysqli_query($conn,$query));
+  if($row) echo "<script>location.href=\"index.php\";</script>";
+  else {
+    echo "<script>alert(\"정보입력을 다시하세요!\");location.href=\"login.php\";</script>";
+  }
 ?>
   </body>
 </html>
