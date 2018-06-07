@@ -62,12 +62,8 @@
                   <th scope=\"row\">".(5-$i)."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-<<<<<<< HEAD
-                  <td>".$row['authorID']."</td>
-                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
-=======
+                  <td>".$row['date']."</td>
                   <td>".$row['all_hits']."</td>
->>>>>>> origin/taeho2
                   </tr>";
               }
             ?>

@@ -53,7 +53,7 @@
           <tbody>
             <?php
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from news order by date desc";
+              $query ="select * from hits_info order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
@@ -62,12 +62,8 @@
                   <th scope=\"row\">".$i."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-<<<<<<< HEAD
-                  <td>".$row['authorID']."</td>
-                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
-=======
-                  <td>".($row['hits']+$row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
->>>>>>> origin/taeho2
+                  <td>".$row['date']."</td>
+                  <td>".$row['all_hits']."</td>
                   </tr>";
               }
             ?>

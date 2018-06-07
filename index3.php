@@ -34,14 +34,9 @@
           <thead>
           <tr>
             <th width="10">#</th>
-<<<<<<< HEAD
             <th width="300">기사제목</th>
             <th width="100">작성자</th>
             <th width="100">작성일</th>
-=======
-            <th width="300">기제목</th>
-            <th width="100">성자</th>
->>>>>>> origin/taeho2
             <th width="50">조회수</th>
           </tr>
           </thead>
@@ -64,12 +59,8 @@
                   <th scope=\"row\">".(5-$i)."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-<<<<<<< HEAD
-                  <td>".$row['authorID']."</td>
-                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
-=======
+                  <td>".$row['date']."</td>
                   <td>".$row['all_hits']."</td>
->>>>>>> origin/taeho2
                   </tr>";
               }
             ?>
