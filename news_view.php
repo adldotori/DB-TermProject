@@ -30,7 +30,7 @@
       <h1 class=\"title2\">".$news['title']."</h1>
       <div style=\"height:20px\">&nbsp;</div>
       <div style=\"text-align: right\">
-      <p style=\"font-size:15px;\">기사입력 ".$news['date']."</p></div>
+      <p style=\"font-size:15px;\">작성자 ".$news['authorID']." | 기사입력 ".$news['date']."</p></div>
       <hr max-width=\"1232px\" style=\"border-top: 1px solid #000; margin-top: 10px\">
       <div style=\"font-size: 20px; min-height: 400px\">"
       .$contents.
