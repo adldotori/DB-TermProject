@@ -19,13 +19,8 @@
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query ="insert into member(ID,password,nickname,authority,age) values('$id','$pw','$nickname','$age',$authority);";
   $result = mysqli_fetch_array(mysqli_query($conn,$query));
-<<<<<<< HEAD
   if($result) alert("회원가입 성공!");
   echo "<script>location.href=\"index.php\"</script>";
-=======
-  if($result) alert(회원가입 성공!);
-  echo"<script>location.href=\"index.php\"</script>";
->>>>>>> origin/yonghee
 ?>
   </body>
 </html>
