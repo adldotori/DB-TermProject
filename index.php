@@ -24,6 +24,43 @@
           <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
+      <!-- 일반회원 또는 미승인기자 로그인 시
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <a href="logout.php">
+          <button type="button" class="btn btn-default">로그아웃</button></a>
+        </div>
+        <div class="btn-group" role="group">
+          <a href="member_comments.php">
+          <button type="button" class="btn btn-default">내가 쓴 댓글</button></a>
+        </div>
+        <div class="btn-group" role="group">
+          <a href="news.php">
+          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
+        </div>
+      </div>
+      -->
+
+      <!-- 승인기자 로그인 시
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <a href="logout.php">
+          <button type="button" class="btn btn-default">로그아웃</button></a>
+        </div>
+        <div class="btn-group" role="group">
+          <a href="reporter_news.php">
+          <button type="button" class="btn btn-default">내가 쓴 기사</button></a>
+        </div>
+        <div class="btn-group" role="group">
+          <a href="news_post.php">
+          <button type="button" class="btn btn-default">기사작성</button></a>
+        </div>
+        <div class="btn-group" role="group">
+          <a href="news.php">
+          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
+        </div>
+      </div>
+      -->
       <div style="height:200px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
@@ -44,6 +81,8 @@
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from news order by hits desc";
               $result = mysqli_query($conn,$query);
+              // result의 tuple 개수가 5보다 작을때 for문 조건 변경필요
+              // (news.php와 동일하게 하면 될 듯, 대신 5개 출력하면 break 하도록!)
               for($i=0;$i<5;$i++){
                 $row = mysqli_fetch_array($result);
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
