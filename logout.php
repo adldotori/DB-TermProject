@@ -10,7 +10,7 @@
   </head>
   <body>
 <?php
-    echo "location.href=\"index.php\";</script>";
+    echo "<script>location.href=\"index.php\";</script>";
 ?>
   </body>
 </html>
