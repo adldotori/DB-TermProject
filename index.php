@@ -79,7 +79,7 @@
           <tbody>
             <?php
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from news order by hits desc";
+              $query ="select * from news order by (0.3*(10hits+20hits+30-40hits+50-hits)+0.2*".$hitsname."+0.2*hits) desc";
               $result = mysqli_query($conn,$query);
               // result의 tuple 개수가 5보다 작을때 for문 조건 변경필요
               // (news.php와 동일하게 하면 될 듯, 대신 5개 출력하면 break 하도록!)
