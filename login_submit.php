@@ -16,7 +16,6 @@
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query ="select * from member where ID=$id and password=$pw";
   $result = mysqli_fetch_array(mysqli_query($conn,$query));
-  echo $array[0].$array[1];
   echo "<script>location.href=\"index.php\"< /script>";
 ?>
   </body>
