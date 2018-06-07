@@ -47,10 +47,10 @@
             <?php
               $cookie = explode(':',$_COOKIE['user_info']);
               $age = $cookie[2];
-              if(!strcmp($age,'10s')) $sort = 'weight_hits10';
-              elseif(!strcmp($age,'20s')) $agehits = 'weight_hits20';
-              elseif(!strcmp($age,'30-40s')) $agehits = 'weight_hits30_40';
-              elseif(!strcmp($age,'50-s')) $agehits = 'weight_hits50_';
+              if($age == '10s') $sort = 'weight_hits10';
+              elseif($age == '20s') $agehits = 'weight_hits20';
+              elseif($age == '30-40s') $agehits = 'weight_hits30_40';
+              elseif($age == '50-s') $agehits = 'weight_hits50_';
               else $agehits = 'null';
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from hits_info order by ".$agehits." desc;";

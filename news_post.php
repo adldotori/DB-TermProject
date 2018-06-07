@@ -9,7 +9,15 @@
     </style>
   </head>
   <body>
-    <a href="index.php">
+    <a href="
+    <?php
+    $cookie = explode(':',$_COOKIE["user_info"]);
+    $authority = $cookie[1];
+    if($authority=='1') echo "index1.php";
+    elseif($authority=='2') echo "index2.php";
+    elseif($authority=='3' || $authority=='4') echo "index3.php";
+    else echo "index.php";
+     ?>">
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
