@@ -37,6 +37,7 @@
             <th width="10">#</th>
             <th width="300">기사제목</th>
             <th width="100">작성자</th>
+            <th width="100">작성일</th>
             <th width="50">조회수</th>
           </tr>
           </thead>
@@ -52,6 +53,7 @@
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$row['newsID']."</th>
                   <td>".$row['title']."</td>
+                  <td>".$row['authorID']."</td>
                   <td>".$row['authorID']."</td>
                   <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
                   </tr>";

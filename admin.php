@@ -38,8 +38,9 @@
             </thead>
           <tbody>
             <!-- php로 다시 구현할 필요있음 -->
-            <form method="post">
-            <tr onclick="location.href='admin_submit.php'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
+            <form method="post" action="admin_submit.php">
+            
+            <tr onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style="cursor: pointer;">
               <th scope="row">1</th>
               <td>Mark</td>
               <td>Otto</td>
