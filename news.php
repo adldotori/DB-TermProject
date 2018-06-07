@@ -49,7 +49,7 @@
                   <th scope=\"row\">".$row['newsID']."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-                  <td>".$row['hits']."</td>
+                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
                   </tr>";
               }
             ?>

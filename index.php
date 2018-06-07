@@ -64,7 +64,7 @@
       <div style="height:200px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading"><b>Top5 기사목록</b></div>
+        <div class="panel-heading"><b>Top5 추천기사목록</b></div>
 
         <!-- Table -->
         <table class="table">
@@ -89,7 +89,7 @@
                   <th scope=\"row\">".$row['newsID']."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-                  <td>".$row['hits']."</td>
+                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
                   </tr>";
               }
             ?>
