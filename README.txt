@@ -15,3 +15,6 @@ index2 / 승인기자 로그인 : '내가 쓴 기사'(reporter_news.php) 기사 
 
 +) news_view.php에서 댓글 작성할 경우, comment_submit.php로 넘어감.
 index1 / admin페이지
+
+member_comments.php 쿼리문 수정 필요 (51번 라인)
+reporter_news.php 쿼리문 수정 필요 (57번 라인)

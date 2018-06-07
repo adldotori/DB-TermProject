@@ -11,7 +11,7 @@
   <body>
 <?php
   $id = $_POST["id"];
-  echo "<script>alert(\"$id\");location.href=\"admin.php\"</script>";
+  echo "<script>alert(\"value : $id\");location.href=\"admin.php\"</script>";
 ?>
   </body>
 </html>

@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
     body {padding: 30px 30px 30px 30px}
+    .mybox {margin-bottom:10px}
     </style>
+    <script>
+    function func1(){
+      document.getElementsById("myBtn");
+    }
+    </script>
   </head>
   <body>
     <a href="index.php">
@@ -16,17 +22,21 @@
     <div style="heigth:200px">&nbsp;</div>
     <h1 class="title2">미승인 기자목록</h1>
     <div style="heigth:200px">&nbsp;</div>
-      <form method="post" action="./admin_submit.php">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="input-group">
-            <input type="text" name="id" class="form-control" disabled placeholder="id | nickname" style="background-color: white;">
-            <span class="input-group-btn" type="submit">
-              <button type="button" class="btn btn-default">승인</button>
-            </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-      </div><!-- /.row -->
-      </form>
+    <div class="mybox">
+    <label>   id | nickname</label></div>
+    <form method="post" action="admin_submit.php">
+      <div class="radio mybox">
+        <label><input type="radio" name="id" value="id1 | nickname1">id1 | nickname1</label>
+      </div>
+      <div class="radio mybox">
+        <label><input type="radio" name="id" value="id2 | nickname2">id2 | nickname2</label>
+      </div>
+      <div class="radio mybox">
+        <label><input type="radio" name="id" value="id3 | nickname3">id3 | nickname3</label>
+      </div>
+      <button type="submit" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 승인
+      </button>
+    </form>
   </body>
 </html>

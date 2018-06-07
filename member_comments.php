@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>나딱뉴스</title>
+    <title>나딱뉴스_내 댓글</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -23,35 +23,32 @@
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
-    <h1 class="title2">NEWS</h1>
+    <h1 class="title2">내가 쓴 댓글</h1>
     <div style="height:20px">&nbsp;</div>
       <div class="panel panel-default" style="margin-bottom: 0px; max-width: 1232px;">
         <!-- Default panel contents -->
-        <div class="panel-heading"><b>전체기사</b></div>
+        <div class="panel-heading"><b>댓글 목록</b></div>
 
         <!-- Table -->
         <table class="table">
           <thead>
           <tr>
-            <th width="5%">#</th>
+            <th width="6%">#</th>
             <th>기사제목</th>
-            <th width="12%">작성자</th>
-            <th width="12%">작성일</th>
-            <th width="10%">조회수</th>
+            <th width="47%">댓글내용</th>
           </tr>
           </thead>
           </table>
           <div style="overflow:auto; max-height:350px;">
           <table class="table" style="margin-bottom:0">
             <thead>
-              <col width="5%">
+              <col width="6%">
               <col>
-              <col width="12%">
-              <col width="12%">
-              <col width="9%">
+              <col width="47%">
             </thead>
           <tbody>
             <?php
+              // query문 수정 필요
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from hits_info order by date desc";
               $result = mysqli_query($conn,$query);
@@ -62,8 +59,6 @@
                   <th scope=\"row\">".$i."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-                  <td>".$row['date']."</td>
-                  <td>".$row['all_hits']."</td>
                   </tr>";
               }
             ?>
