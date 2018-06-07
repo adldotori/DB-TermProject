@@ -20,7 +20,7 @@
   $query ="insert into member(ID,password,nickname,authority,age) values('$id','$pw','$nickname',''$age',$authority);";
   $result = mysqli_fetch_array(mysqli_query($conn,$query));
   if($result) alert(회원가입 성공!);
-  echo"location.href=\"index.php\"</script>";
+  echo"<script>location.href=\"index.php\"</script>";
 ?>
   </body>
 </html>
