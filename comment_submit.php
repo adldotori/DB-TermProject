@@ -11,7 +11,7 @@
   <body>
 <?php
   $comment = $_POST["comment"];
-  $newsID = $_POST["newsID"];
+  $newsID = $_GET["newsID"];
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query1 ="select count(*) from comment where articleTitle='".$newsID."'";
   $result = mysqli_fetch_array(mysqli_query($conn,$query));

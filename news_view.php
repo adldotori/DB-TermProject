@@ -47,14 +47,13 @@
       }
       echo "</h1>
       <div style=\"height:20px\">&nbsp;</div>";
-      echo "<form method=\"post\" action=\"./comment_submit.php\">
+      echo "<form method=\"post\" action=\"./comment_submit.php?newsID=".$news['title']."\">
     <div class=\"row\">
       <div class=\"col-lg-6\">
         <div class=\"input-group\">
-          <input type=\"text\" name=\"comment\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다."; echo">
-          <input type=\"text\" name=\"newsID\" value=\"".$news['title']."\" class=\"form-control\">
+          <input type=\"text\" name=\"comment\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " >"; else echo "로그인 후 이용가능합니다.\" disabled>"; echo "
           <span class=\"input-group-btn\" type=\"submit\">
-            <button type=\"button\" class=\"btn btn-default\">댓글달기</button>
+            <button type=\"submit\" class=\"btn btn-default\">댓글달기</button>
           </span>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
