@@ -24,7 +24,7 @@
           <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
-      
+
       <div style="height:200px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
@@ -40,6 +40,15 @@
             <th width="50">조회수</th>
           </tr>
           </thead>
+          </table>
+          <div style="overflow:auto; max-height:350px;">
+          <table class="table" style="margin-bottom:0">
+            <thead>
+              <col width="5%">
+              <col>
+              <col width="15%">
+              <col width="9%">
+            </thead>
           <tbody>
             <?php
               $conn = mysqli_connect('localhost','root','taeho','database');
