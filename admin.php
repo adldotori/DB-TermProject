@@ -13,65 +13,20 @@
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
-      <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading"><b>Top5 기사목록</b></div>
-
-        <!-- Table -->
-        <table class="table">
-          <thead>
-          <tr>
-            <th width="10">#</th>
-            <th width="300">기사제목</th>
-            <th width="100">작성자</th>
-            <th width="50">조회수</th>
-          </tr>
-          </thead>
-          </table>
-          <div style="overflow:auto; max-height:350px;">
-          <table class="table" style="margin-bottom:0">
-            <thead>
-              <col width="5%">
-              <col>
-              <col width="15%">
-              <col width="9%">
-            </thead>
-          <tbody>
-            <!-- php로 다시 구현할 필요있음 -->
-            <form method="post" action="admin_submit.php">
-            
-            <tr onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style="cursor: pointer;">
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr></form>
-            <tr onclick="location.href='admin_submit.php'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr onclick="location.href='admin_submit.php'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr onclick="location.href='admin_submit.php'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">4</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr onclick="location.href='admin_submit.php'" onMouseOver="this.style.backgroundColor='#e6e6e6';" onMouseOut="this.style.backgroundColor=''"; style=" cursor: pointer;">
-              <th scope="row">5</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div style="heigth:200px">&nbsp;</div>
+    <h1 class="title2">미승인 기자목록</h1>
+    <div style="heigth:200px">&nbsp;</div>
+      <form method="post" action="./admin_submit.php">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" name="id" class="form-control" disabled placeholder="id | nickname" style="background-color: white;">
+            <span class="input-group-btn" type="submit">
+              <button type="button" class="btn btn-default">승인</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+      </form>
   </body>
 </html>
