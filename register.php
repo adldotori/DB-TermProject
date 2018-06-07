@@ -34,10 +34,10 @@
       <div class="form-group" style="margin:20px 0 20px 0; width:196px;">
         <select class="form-control" id="sel1" name="age">
           <option>연령대</option>
-          <option>10대</option>
-          <option>20대</option>
-          <option>30-40대</option>
-          <option>50대 이상</option>
+          <option value="10s">10대</option>
+          <option value="20s">20대</option>
+          <option value="30-40s">30-40대</option>
+          <option value="50-s">50대 이상</option>
         </select>
       </div>
       <div class="panel panel-default" style="width:196px;">
