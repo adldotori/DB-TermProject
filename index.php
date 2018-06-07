@@ -24,60 +24,7 @@
           <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
-      <!-- 일반회원 또는 미승인기자 로그인 시
-      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-          <a href="logout.php">
-          <button type="button" class="btn btn-default">로그아웃</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="member_comments.php">
-          <button type="button" class="btn btn-default">내가 쓴 댓글</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="news.php">
-          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
-        </div>
-      </div>
-      -->
-
-      <!-- 승인기자 로그인 시
-      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-          <a href="logout.php">
-          <button type="button" class="btn btn-default">로그아웃</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="reporter_news.php">
-          <button type="button" class="btn btn-default">내가 쓴 기사</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="news_post.php">
-          <button type="button" class="btn btn-default">기사작성</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="news.php">
-          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
-        </div>
-      </div>
-      -->
-
-      <!-- admin 로그인 시
-      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-          <a href="logout.php">
-          <button type="button" class="btn btn-default">로그아웃</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="reporter_news.php">
-          <button type="button" class="btn btn-default">승인대기 기자목록</button></a>
-        </div>
-        <div class="btn-group" role="group">
-          <a href="news.php">
-          <button type="button" class="btn btn-default">전체뉴스보기</button></a>
-        </div>
-      </div>
-      -->
+      
       <div style="height:200px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->

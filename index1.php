@@ -16,7 +16,7 @@
           <button type="button" class="btn btn-default">로그아웃</button></a>
         </div>
         <div class="btn-group" role="group">
-          <a href="reporter_news.php">
+          <a href="admin.php">
           <button type="button" class="btn btn-default">승인대기 기자목록</button></a>
         </div>
         <div class="btn-group" role="group">
@@ -24,7 +24,7 @@
           <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
-      
+
       <div style="height:200px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->

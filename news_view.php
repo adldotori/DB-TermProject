@@ -47,6 +47,18 @@
       echo "</h1>
       <div style=\"height:20px\">&nbsp;</div>";
       ?>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <form method="post" action="./comment_submit.php">
+          <input type="text" class="form-control" placeholder="로그인 후 이용가능합니다.">
+          <span class="input-group-btn" type="submit">
+            <button type="button" class="btn btn-default">댓글달기</button>
+          </span>
+          </form>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
     </div>
   </body>
 </html>
