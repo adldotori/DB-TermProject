@@ -10,7 +10,7 @@
   </head>
   <body>
 <?php
-    echo "<script>alert(\"로그아웃!\");location.href=\"index.php\";</script>";
+    echo "location.href=\"index.php\";</script>";
 ?>
   </body>
 </html>
