@@ -17,6 +17,11 @@
   $query ="select * from member where ID=$id and password=$pw";
   $row = mysqli_fetch_array(mysqli_query($conn,$query));
   if($row) echo "<script>location.href=\"index.php\";</script>";
+  echo "
+  <form method=\"post\">
+  <input value=$row['ID'] name=\"id\"><input value=$row['authority'] name=\"authority\">
+  </form>
+";
   else {
     echo "<script>alert(\"정보입력을 다시하세요!\");location.href=\"login.php\";</script>";
   }
