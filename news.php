@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>나딱뉴스</title>
+    <title>나뉴스</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -9,7 +9,16 @@
     </style>
   </head>
   <body>
-    <a href="index.php">
+    <a href="
+    <?php
+    $cookie = explode(':',$_COOKIE["user_info"]);
+    $authority = $cookie[1];
+    if($authority=='1') echo "index1.php";
+    elseif($authority=='2') echo "index2.php";
+    elseif($authority=='3' || $authority=='4') echo "index3.php";
+    else echo "index.php";
+     ?>
+    ">
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
@@ -44,12 +53,14 @@
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from news order by date desc";
               $result = mysqli_query($conn,$query);
+              $i =0;
               while($row = mysqli_fetch_array($result)){
+                $i++;
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
-                  <th scope=\"row\">".$row['newsID']."</th>
+                  <th scope=\"row\">".$i."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
+                  <td>".($row['hits']+$row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
                   </tr>";
               }
             ?>

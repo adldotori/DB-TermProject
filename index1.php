@@ -43,17 +43,16 @@
           <tbody>
             <?php
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from news order by hits desc";
+              $query ="select * from hits_info order by all_hits desc";
               $result = mysqli_query($conn,$query);
-              // result의 tuple 개수가 5보다 작을때 for문 조건 변경필요
-              // (news.php와 동일하게 하면 될 듯, 대신 5개 출력하면 break 하도록!)
-              for($i=0;$i<5;$i++){
-                $row = mysqli_fetch_array($result);
+              $i=5;
+              while(($row = mysqli_fetch_array($result))&&$i!=0){
+                $i--;
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
-                  <th scope=\"row\">".$row['newsID']."</th>
+                  <th scope=\"row\">".(5-$i)."</th>
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
-                  <td>".($row['10hits']+$row['20hits']+$row['30-40hits']+$row['50-hits'])."</td>
+                  <td>".$row['all_hits']."</td>
                   </tr>";
               }
             ?>
