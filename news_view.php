@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <title>나딱뉴스</title>
@@ -9,19 +9,27 @@
     </style>
   </head>
   <body>
-    <a href="#" onclick="history.go(-1)">
+    <a href="news.php">
     <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 뒤로가기
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 전체뉴스로
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
     <div style="max-width: 1232px;">
     <!--php로 구현필요-->
     <?php
       $newsID=$_GET['newsID'];
-
+      $cookie = explode(':',$_COOKIE['user_info']);
+      $age = $cookie[2];
+      if($age == '10s') $hits = '`10hits`';
+      elseif($age == '20s') $hits = '`20hits`';
+      elseif($age == '30-40s') $hits = '`30-40hits`';
+      elseif($age == '50-s') $hits = '`50-hits`';
+      else $agehits = 'hits';
       $conn = mysqli_connect('localhost','root','taeho','database');
-      $query1 ="select * from news where newsID=$newsID";
-      $news = mysqli_fetch_array(mysqli_query($conn,$query1));
+      $query1 ="update news set ".$hits."=".$hits."+1 where newsID = ".$newsID;
+      mysqli_query($conn,$query1);
+      $query2 = "select * from news where newsID=".$newsID;
+      $news = mysqli_fetch_array(mysqli_query($conn,$query2));
       $root = $_SERVER['DOCUMENT_ROOT'];
       $filename = $root."/news/".$news['contents'];
       $fp = fopen($filename,'r');
