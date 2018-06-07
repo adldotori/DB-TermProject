@@ -15,7 +15,7 @@
     </script>
   </head>
   <body>
-    <a href="index.php">
+    <a href="index1.php">
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>

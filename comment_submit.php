@@ -11,7 +11,12 @@
   <body>
 <?php
   $comment = $_POST["comment"];
-  echo "<script>alert(\"$comment\");location.href=\"index.php\"</script>";
+  $newsID = $_POST["newsID"];
+  $conn = mysqli_connect('localhost','root','taeho','database');
+  $query1 ="select count(*) from comment where articleTitle='".$newsID."'";
+  $result = mysqli_fetch_array(mysqli_query($conn,$query));
+  echo $result[0];
+  echo "<script>location.href=\"news_view.php\"</script>";
 ?>
   </body>
 </html>
