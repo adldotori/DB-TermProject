@@ -11,7 +11,7 @@
   <body>
     <a href="news.php">
     <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 전체뉴스로
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 전체뉴스
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
     <div style="max-width: 1232px;">
@@ -48,18 +48,20 @@
       <h1 class=\"title2\" style=\"font-size:24px\">Comments</h1>
       <br>
       <h1 class=\"title2\" style=\"font-size:20px\">";
-      $query2 = "select * from comment where articleTitle='".$news['title']."'";
+      $query2 = "select * from comment where newsTitle='".$news['title']."'";
       $result = mysqli_query($conn,$query2);
       while($comment = mysqli_fetch_array($result)){
         echo $comment['writer']." : ".$comment['contents']."<br>";
       }
       echo "</h1>
       <div style=\"height:20px\">&nbsp;</div>";
-      echo "<form method=\"post\" action=\"./comment_submit.php?newsID=".$news['title']."\">
+      echo "<form method=\"post\" action=\"./comment_submit.php\">
     <div class=\"row\">
       <div class=\"col-lg-6\">
         <div class=\"input-group\">
-          <input type=\"text\" name=\"comment\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " >"; else echo "로그인 후 이용가능합니다.\" disabled>"; echo "
+          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다.\" disabled>"; echo "
+          <input type=\"text\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
+          <input type=\"text\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
           <span class=\"input-group-btn\" type=\"submit\">
             <button type=\"submit\" class=\"btn btn-default\">댓글달기</button>
           </span>

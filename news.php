@@ -35,8 +35,8 @@
           <tr>
             <th width="5%">#</th>
             <th>기사제목</th>
-            <th width="12%">작성자</th>
-            <th width="12%">작성일</th>
+            <th width="10%">작성자</th>
+            <th width="15%">작성일</th>
             <th width="10%">조회수</th>
           </tr>
           </thead>
@@ -46,8 +46,8 @@
             <thead>
               <col width="5%">
               <col>
-              <col width="12%">
-              <col width="12%">
+              <col width="10%">
+              <col width="15%">
               <col width="9%">
             </thead>
           <tbody>

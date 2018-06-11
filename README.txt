@@ -7,6 +7,13 @@ newsID auto increment로 자동으로 증가
 date 미입력시 현재 시간 입력
 hits 미입력시 0
 
+
+comment(comment#,contents,writer,articleTitle)
+primary key - articleTitle,comment#
+unique - contents, articleTitle
+not null - all
+
+
 index 페이지에서, (두번째 버튼)
 index3 / 일반회원 로그인 : '내가 쓴 댓글' (member_comments.php)
 index3 / 미승인기자 로그인 : '내가 쓴 댓글' (일반회원과 동일)
