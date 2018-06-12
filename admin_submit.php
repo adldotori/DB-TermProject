@@ -11,7 +11,11 @@
   <body>
 <?php
   $id = $_POST["id"];
-  echo "<script>alert(\"value : $id\");location.href=\"admin.php\"</script>";
+  $cnt = count($id)
+  for ($i=0; $i<$cnt; $i++){
+    echo"$id[$i]";  //확인 차 출력해보려 했지만 에러남.. php상의 오류인듯
+          // id값만 배열로 받아옴.
+  }
 ?>
   </body>
 </html>
