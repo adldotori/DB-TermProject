@@ -11,8 +11,8 @@
   $cookie = explode(':',$_COOKIE["user_info"]);
   $authorID = $cookie[0];
   $root = $_SERVER['DOCUMENT_ROOT'];
+  $i=1;
   do {
-    $i=1;
     $contentTitle = "news".($result[0]+$i).".txt";
     $path = $root."/news/".$contentTitle;
     $i++;
