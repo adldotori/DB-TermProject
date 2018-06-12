@@ -27,7 +27,7 @@
           <button type="button" class="btn btn-default">전체뉴스보기</button></a>
         </div>
       </div>
-      <div style="height:200px">&nbsp;</div>
+      <div style="height:150px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading"><b>Top5 추천기사목록</b></div>
