@@ -48,7 +48,6 @@
             </thead>
           <tbody>
             <?php
-              // query문 수정 필요
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from hits_info order by date desc";
               $result = mysqli_query($conn,$query);

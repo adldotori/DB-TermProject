@@ -59,9 +59,9 @@
     <div class=\"row\">
       <div class=\"col-lg-6\">
         <div class=\"input-group\">
-          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다.\" disabled>"; echo "
-          <input type=\"text\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
-          <input type=\"text\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
+          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다.\" disabled"; echo "\">
+          <input type=\"hidden\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
+          <input type=\"hidden\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
           <span class=\"input-group-btn\" type=\"submit\">
             <button type=\"submit\" class=\"btn btn-default\">댓글달기</button>
           </span>

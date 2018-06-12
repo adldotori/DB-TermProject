@@ -43,7 +43,7 @@
           </thead>
           <tbody>
             <?php
-              setcookie("user_info","",time()+1800,"/");
+              setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from hits_info order by all_hits desc";
               $result = mysqli_query($conn,$query);

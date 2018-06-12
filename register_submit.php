@@ -12,7 +12,7 @@
   $nickname = $_POST["nickname"];
   $age = $_POST["age"];
   $authority = $_POST["authority"];
-  if($pw != $pw_con){
+  if($pw!=$pw_con){
     echo "<script>alert(패스워드가 같지 않습니다.);location.href=\"register.php\"</script>";
   }
   $conn = mysqli_connect('localhost','root','taeho','database');

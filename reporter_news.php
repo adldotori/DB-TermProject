@@ -35,9 +35,9 @@
           <tr>
             <th width="5%">#</th>
             <th>기사제목</th>
-            <th width="12%">작성자</th>
-            <th width="12%">작성일</th>
-            <th width="10%">조회수</th>
+            <th width="10%">작성자</th>
+            <th width="15%">작성일</th>
+            <th width="8%">조회수</th>
           </tr>
           </thead>
           </table>
@@ -46,15 +46,16 @@
             <thead>
               <col width="5%">
               <col>
-              <col width="12%">
-              <col width="12%">
-              <col width="9%">
+              <col width="10%">
+              <col width="15%">
+              <col width="8%">
             </thead>
           <tbody>
             <?php
+              $cookie = explode(':',$_COOKIE['user_info']);
+              $nickname = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              // 이 쿼리 맞는지 확인 필요
-              $query ="select * from news where authorID=''";
+              $query ="select * from hits_info where authorID='$nickname' order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){

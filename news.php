@@ -37,7 +37,7 @@
             <th>기사제목</th>
             <th width="10%">작성자</th>
             <th width="15%">작성일</th>
-            <th width="10%">조회수</th>
+            <th width="8%">조회수</th>
           </tr>
           </thead>
           </table>
@@ -48,7 +48,7 @@
               <col>
               <col width="10%">
               <col width="15%">
-              <col width="9%">
+              <col width="8%">
             </thead>
           <tbody>
             <?php
