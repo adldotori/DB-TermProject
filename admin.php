@@ -15,23 +15,47 @@
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
-    <h1 class="title2">미승인 기자목록</h1>
-    <div style="heigth:200px">&nbsp;</div>
-    <div class="mybox">
-    <label>   id | nickname</label></div>
-    <form method="post" action="admin_submit.php">
-      <div class="checkbox mybox">
-        <label><input type="checkbox" name="id[]" value="id1">id1 | nickname1</label>
+    <div>
+      <div style="float: left; margin-right: 300px">
+        <h1 class="title2">미승인 기자목록</h1>
+        <div style="heigth:200px">&nbsp;</div>
+        <div class="mybox">
+        <label>   id | nickname</label></div>
+        <form method="post" action="admin_submit.php">
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id1">id1 | nickname1</label>
+          </div>
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id2">id2 | nickname2</label>
+          </div>
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id3">id3 | nickname3</label>
+          </div>
+          <button type="submit" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 승인
+          </button>
+        </form>
       </div>
-      <div class="checkbox mybox">
-        <label><input type="checkbox" name="id[]" value="id2">id2 | nickname2</label>
+      <div style="float:left">
+        <h1 class="title2">모든 회원목록</h1>
+        <div style="heigth:200px">&nbsp;</div>
+        <div class="mybox">
+        <label>   id | nickname</label></div>
+        <form method="post" action="admin_submit2.php">
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id1">id1 | nickname1</label>
+          </div>
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id2">id2 | nickname2</label>
+          </div>
+          <div class="checkbox mybox">
+            <label><input type="checkbox" name="id[]" value="id3">id3 | nickname3</label>
+          </div>
+          <button type="submit" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 회원삭제
+          </button>
+        </form>
       </div>
-      <div class="checkbox mybox">
-        <label><input type="checkbox" name="id[]" value="id3">id3 | nickname3</label>
-      </div>
-      <button type="submit" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 승인
-      </button>
-    </form>
+    </div>
   </body>
 </html>
