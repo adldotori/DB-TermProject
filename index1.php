@@ -17,7 +17,7 @@
         </div>
         <div class="btn-group" role="group">
           <a href="admin.php">
-          <button type="button" class="btn btn-default">승인대기 기자목록</button></a>
+          <button type="button" class="btn btn-default">관리</button></a>
         </div>
         <div class="btn-group" role="group">
           <a href="news.php">

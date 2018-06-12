@@ -21,40 +21,42 @@
         <div style="heigth:200px">&nbsp;</div>
         <div class="mybox">
         <label>   id | nickname</label></div>
-        <form method="post" action="admin_submit.php">
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id1">id1 | nickname1</label>
-          </div>
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id2">id2 | nickname2</label>
-          </div>
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id3">id3 | nickname3</label>
-          </div>
-          <button type="submit" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 승인
+        <?php
+          echo "<form method=\"post\" action=\"admin_submit.php\">
+          ";
+          $conn = mysqli_connect('localhost','root','taeho','database');
+          $query ="select * from member where authority=3";
+          $result = mysqli_query($conn,$query);
+          while($row = mysqli_fetch_array($result)){
+            echo "<div class=\"checkbox mybox\"><label><input type=\"checkbox\" name=\"id[]\"
+            value=\"".$row['ID']."\">".$row['ID']." | ".$row['nickname']."</label></div>";
+        };
+          echo "<button type=\"submit\" class=\"btn btn-default btn-lg\">
+            <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span> 승인
           </button>
-        </form>
+        </form>";
+        ?>
       </div>
       <div style="float:left">
         <h1 class="title2">모든 회원목록</h1>
         <div style="heigth:200px">&nbsp;</div>
         <div class="mybox">
         <label>   id | nickname</label></div>
-        <form method="post" action="admin_submit2.php">
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id1">id1 | nickname1</label>
-          </div>
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id2">id2 | nickname2</label>
-          </div>
-          <div class="checkbox mybox">
-            <label><input type="checkbox" name="id[]" value="id3">id3 | nickname3</label>
-          </div>
-          <button type="submit" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 회원삭제
+        <?php
+          echo "<form method=\"post\" action=\"admin_submit2.php\">
+          ";
+          $conn = mysqli_connect('localhost','root','taeho','database');
+          $query ="select * from member where authority!=1";
+          $result = mysqli_query($conn,$query);
+          while($row = mysqli_fetch_array($result)){
+            echo "<div class=\"checkbox mybox\"><label><input type=\"checkbox\" name=\"id[]\"
+            value=\"".$row['ID']."\">".$row['ID']." | ".$row['nickname']."</label></div>";
+        };
+          echo "<button type=\"submit\" class=\"btn btn-default btn-lg\">
+            <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span> 회원삭제
           </button>
-        </form>
+        </form>";
+        ?>
       </div>
     </div>
   </body>
