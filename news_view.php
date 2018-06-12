@@ -34,6 +34,7 @@
       $filename = $root."/news/".$news['contents'];
       $fp = fopen($filename,'r');
       $contents = fread($fp,filesize($filename));
+      $contents = str_replace("\n","<br />\n",$contents);
       fclose($fp);
       echo "
       <h1 class=\"title2\">".$news['title']."</h1>
