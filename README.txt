@@ -28,3 +28,6 @@ reporter_news.php 쿼리문 수정 필요 (57번 라인)
 
 create view hits_info as select title,authorID,newsID,date,(hits+10hits+20hits+`30-40hits`+`50-hits`) as all_hits,(0.2*hits+0.5*10hits+0.3*20hits+0.3*`30-40hits`+0.3*`50-hits`) as weight_hits10,(0.2*hits+0.3*10hits+0.5*20hits+0.3*`30-40hits`+0.3*`50-hits`) as weight_hits20,(0.2*hits+0.3*10hits+0.3*20hits+0.5*`30-40hits`+0.3*`50-hits`) as weight_hits30_40,(0.2*hits+0.3*10hits+0.3*20hits+0.3*`30-40hits`+0.5*`50-hits`) as weight_hits50_ from news;
 view : hits_info(title,authorID,newsID,date,all_hits,weight_hits10,weight_hits20,weight_hits30_40,weight_hits50_)
+
+workbench 데이터 백업 및 복원하는 방법
+http://emflant.tistory.com/22
