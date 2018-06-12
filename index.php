@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div style="height:150px">&nbsp;</div>
+      <div style="height:70px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading"><b>Top5 추천기사목록</b></div>

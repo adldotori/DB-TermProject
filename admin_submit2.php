@@ -9,13 +9,15 @@
     </style>
   </head>
   <body>
-<?php
-  $id = $_POST["id"];
-  $cnt = count($id)
-  for ($i=0; $i<$cnt; $i++){
-    echo"$id[$i]";  //확인 차 출력해보려 했지만 에러남.. php상의 오류인듯
-          // id값만 배열로 받아옴.
-  }
-?>
+    <?php
+      $id = $_POST["id"];
+      $cnt = count($id);
+      for ($i=0; $i<$cnt; $i++){
+        $conn = mysqli_connect('localhost','root','taeho','database');
+        $query ="delete from member where id='$id[$i]'";
+        mysqli_query($conn,$query);
+      }
+    ?>
+    <script>location.href ="admin.php";</script>
   </body>
 </html>
