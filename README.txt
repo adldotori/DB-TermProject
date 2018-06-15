@@ -31,3 +31,12 @@ view : hits_info(title,authorID,newsID,date,all_hits,weight_hits10,weight_hits20
 
 workbench 데이터 백업 및 복원하는 방법
 http://emflant.tistory.com/22
+
+20180615
+뉴스 작성에서는 category (정치, 경제, 사회, 문화)를 설정할 수 있도록 해놓았음
+이걸 news 테이블에 새로운 column을 추가하기 보다는 아래와 같은 방식이 어떨지.. 생각해보았음
+방식 : 제목앞에 '<category>'를 붙인다.
+예를 들자면, "<정치>김태서군의 발언, 도마위에 올라"
+이런식으로 하면 디비 수정은 필요없으면서 다른 연산도 다 가능할 듯
+
++) member_comments.php의 쿼리문 수정필요 ㅠ

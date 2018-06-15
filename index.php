@@ -55,7 +55,7 @@
                   <td>".$row['title']."</td>
                   <td>".$row['authorID']."</td>
                   <td>".$row['date']."</td>
-                  <td>".$row['all_hits']."</td>
+                  <td style=\"text-align:right\">".$row['all_hits']."</td>
                   </tr>";
               }
             ?>
