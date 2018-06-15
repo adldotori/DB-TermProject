@@ -48,16 +48,18 @@
             </thead>
           <tbody>
             <?php
+              $cookie = explode(':',$_COOKIE["user_info"]);
+              $nickname = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info order by date desc";
+              $query ="select * from comment where writer='$nickname'";
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
                 $i++;
-                echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
+                echo "<tr onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$i."</th>
-                  <td>".$row['title']."</td>
-                  <td>".$row['authorID']."</td>
+                  <td>".$row['newsTitle']."</td>
+                  <td>".$row['contents']."</td>
                   </tr>";
               }
             ?>
