@@ -36,11 +36,11 @@
         <table class="table">
           <thead>
           <tr>
-            <th width="10">#</th>
-            <th width="300">기사제목</th>
-            <th width="100">작성자</th>
-            <th width="100">작성일</th>
-            <th width="50">조회수</th>
+            <th width=5%>#</th>
+            <th width=45%>기사제목</th>
+            <th width=15%>작성자</th>
+            <th width=25%>작성일</th>
+            <th width=10%>조회수</th>
           </tr>
           </thead>
           <tbody>
@@ -58,12 +58,14 @@
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
                 $i--;
+                if($i==4) $big =  "style=\"font-size:18px;font-weight:bold;color:violet;\"";
+                else $big="";
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
-                  <th scope=\"row\">".(5-$i)."</th>
-                  <td>".$row['title']."</td>
-                  <td>".$row['authorID']."</td>
-                  <td>".$row['date']."</td>
-                  <td>".$row['all_hits']."</td>
+                  <th scope=\"row\" $big>".(5-$i)."</th>
+                  <td $big>".$row['title']."</td>
+                  <td $big>".$row['authorID']."</td>
+                  <td $big>".$row['date']."</td>
+                  <td $big>".$row['all_hits']."</td>
                   </tr>";
               }
             ?>
