@@ -34,11 +34,11 @@
         <table class="table">
           <thead>
           <tr>
-            <th width=5%>#</th>
-            <th width=45%>기사제목</th>
-            <th width=15%>작성자</th>
-            <th width=25%>작성일</th>
-            <th width=10%>조회수</th>
+            <th width=5% style="text-align:left;">#</th>
+            <th width=48% style="text-align:left;">기사제목</th>
+            <th width=15% style="text-align:center;">작성자</th>
+            <th width=25% style="text-align:center;">작성일</th>
+            <th width=7% style="text-align:right;">조회수</th>
           </tr>
           </thead>
           <tbody>
@@ -50,22 +50,14 @@
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
                 $i--;
-                if($i==4) $big =  "style=\"font-size:18px;font-weight:bold;color:violet;\"";
-                else $big="";
+                if($i==4) {$big =  "style=\"font-size:18px;font-weight:bold;color:violet;"; $leftsort="text-align:left;"; $centersort="text-align:center;"; $rightsort="text-align:right;";}
+                else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
-<<<<<<< HEAD
-                  <th scope=\"row\" $big>".(5-$i)."</th>
-                  <td $big>".$row['title']."</td>
-                  <td $big>".$row['authorID']."</td>
-                  <td $big>".$row['date']."</td>
-                  <td $big>".$row['all_hits']."</td>
-=======
-                  <th scope=\"row\">".(5-$i)."</th>
-                  <td>".$row['title']."</td>
-                  <td>".$row['authorID']."</td>
-                  <td>".$row['date']."</td>
-                  <td style=\"text-align:right\">".$row['all_hits']."</td>
->>>>>>> origin/yonghee
+                  <th scope=\"row\" $big $leftsort\">".(5-$i)."</th>
+                  <td $big $leftsort\">".$row['title']."</td>
+                  <td $big $centersort\">".$row['authorID']."</td>
+                  <td $big $centersort\">".$row['date']."</td>
+                  <td $big $rightsort\">".$row['all_hits']."</td>
                   </tr>";
               }
             ?>

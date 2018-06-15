@@ -33,13 +33,14 @@
         <label for="newsTitle">기사내용</label>
         <textarea type="text" class="form-control" name="content" rows="50" placeholder="내용을 입력하세요" style="height:500px"></textarea>
       </div>
-      <div class="panel panel-default" style="width:310px;">
+      <div class="panel panel-default" style="width:390px;">
         <div class="panel-heading">기사구분</div>
         <div class="panel-body">
           <label class="radio-inline"><input type="radio" name="category" value="정치">정치</label>
           <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="category" value="경제">경제</label>
           <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="category" value="사회">사회</label>
           <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="category" value="문화">문화</label>
+          <label class="radio-inline" style="margin:0 0 0 20px"><input type="radio" name="category" value="스포츠">스포츠</label>
         </div>
       </div>
       <button type="submit" class="btn btn-default btn-lg">
