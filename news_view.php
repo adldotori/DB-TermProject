@@ -19,6 +19,7 @@
     <?php
       $newsID=$_GET['newsID'];
       $cookie = explode(':',$_COOKIE['user_info']);
+      $authorID =$cookie[0];
       $age = $cookie[2];
       if($age == '10s') $hits = '`10hits`';
       elseif($age == '20s') $hits = '`20hits`';
@@ -60,7 +61,7 @@
     <div class=\"row\">
       <div class=\"col-lg-6\">
         <div class=\"input-group\">
-          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다.\" disabled"; echo "\">
+          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo " "; else echo "로그인 후 이용가능합니다.\" disabled"; echo ">
           <input type=\"hidden\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
           <input type=\"hidden\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
           <span class=\"input-group-btn\" type=\"submit\">
@@ -69,8 +70,13 @@
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
-    </form>";
+    </form>
+    </div>";
+    if($authorID == $news['authorID']){
+      echo"
+      <input type=\"button\" value=\"수정하기\" onClick=\"<script>location.href='news_post.php'</script>\">
+      <input type=\"button\" value=\"삭제하기\" onClick=\"<script>var delete = window.confirm('정말 삭제하시겠습니까?'); if(delete) location.href='news_delete_submit.php'</script>\">";
+    }
     ?>
-    </div>
   </body>
 </html>
