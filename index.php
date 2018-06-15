@@ -53,11 +53,19 @@
                 if($i==4) $big =  "style=\"font-size:18px;font-weight:bold;color:violet;\"";
                 else $big="";
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
+<<<<<<< HEAD
                   <th scope=\"row\" $big>".(5-$i)."</th>
                   <td $big>".$row['title']."</td>
                   <td $big>".$row['authorID']."</td>
                   <td $big>".$row['date']."</td>
                   <td $big>".$row['all_hits']."</td>
+=======
+                  <th scope=\"row\">".(5-$i)."</th>
+                  <td>".$row['title']."</td>
+                  <td>".$row['authorID']."</td>
+                  <td>".$row['date']."</td>
+                  <td style=\"text-align:right\">".$row['all_hits']."</td>
+>>>>>>> origin/yonghee
                   </tr>";
               }
             ?>

@@ -8,6 +8,7 @@
 <?php
   $title = $_POST["title"];
   $content = $_POST["content"];
+  $category = $_POST["category"];
   $cookie = explode(':',$_COOKIE["user_info"]);
   $authorID = $cookie[0];
   $root = $_SERVER['DOCUMENT_ROOT'];

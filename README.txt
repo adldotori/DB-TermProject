@@ -28,3 +28,15 @@ reporter_news.php 쿼리문 수정 필요 (57번 라인)
 
 create view hits_info as select title,authorID,newsID,date,(hits+10hits+20hits+`30-40hits`+`50-hits`) as all_hits,(0.2*hits+0.5*10hits+0.3*20hits+0.3*`30-40hits`+0.3*`50-hits`) as weight_hits10,(0.2*hits+0.3*10hits+0.5*20hits+0.3*`30-40hits`+0.3*`50-hits`) as weight_hits20,(0.2*hits+0.3*10hits+0.3*20hits+0.5*`30-40hits`+0.3*`50-hits`) as weight_hits30_40,(0.2*hits+0.3*10hits+0.3*20hits+0.3*`30-40hits`+0.5*`50-hits`) as weight_hits50_ from news;
 view : hits_info(title,authorID,newsID,date,all_hits,weight_hits10,weight_hits20,weight_hits30_40,weight_hits50_)
+
+workbench 데이터 백업 및 복원하는 방법
+http://emflant.tistory.com/22
+
+20180615
+뉴스 작성에서는 category (정치, 경제, 사회, 문화)를 설정할 수 있도록 해놓았음
+이걸 news 테이블에 새로운 column을 추가하기 보다는 아래와 같은 방식이 어떨지.. 생각해보았음
+방식 : 제목앞에 '<category>'를 붙인다.
+예를 들자면, "<정치>김태서군의 발언, 도마위에 올라"
+이런식으로 하면 디비 수정은 필요없으면서 다른 연산도 다 가능할 듯
+
++) member_comments.php의 쿼리문 수정필요 ㅠ
