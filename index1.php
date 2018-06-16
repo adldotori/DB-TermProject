@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <title>나딱뉴스</title>
@@ -43,13 +43,18 @@
           </thead>
           <tbody>
             <?php
+              $cookie = explode(':',$_COOKIE['user_info']);
+              $me = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info order by all_hits desc";
-              $result = mysqli_query($conn,$query);
+              $query1 ="select * from member where nickname='$me'";
+              $result1 = mysqli_query($conn,$query1);
+              $rate1 =
+              $query2 ="select * from hits_info order by all_hits* desc";
+              $result2 = mysqli_query($conn,$query2);
               $i=5;
-              while(($row = mysqli_fetch_array($result))&&$i!=0){
+              while(($row = mysqli_fetch_array($result2))&&$i!=0){
                 $i--;
-                if($i==4) {$big =  "style=\"font-size:18px;font-weight:bold;color:violet;"; $leftsort="text-align:left;"; $centersort="text-align:center;"; $rightsort="text-align:right;";}
+                if($i==4) {$big =  "style=\"font-size:18px;font-weight:bold;color:#c65ff9;"; $leftsort="text-align:left;"; $centersort="text-align:center;"; $rightsort="text-align:right;";}
                 else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\" $big $leftsort\">".(5-$i)."</th>

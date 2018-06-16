@@ -15,7 +15,6 @@
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
     <div style="max-width: 1232px;">
-    <!--php로 구현필요-->
     <?php
       $newsID=$_GET['newsID'];
       $cookie = explode(':',$_COOKIE['user_info']);
@@ -37,10 +36,25 @@
       $contents = fread($fp,filesize($filename));
       $contents = str_replace("\n","<br />\n",$contents);
       fclose($fp);
+      $query3 = "update member set ".$news['category']."=".$news['category']."+1 where nickname='$authorID'";
+      mysqli_query($conn,$query3);
       echo "
-      <h1 class=\"title2\">".$news['title']."</h1>
-      <div style=\"height:20px\">&nbsp;</div>
-      <div style=\"text-align: right\">
+      <h1 class=\"title2\"><".$news['category'].">".$news['title']."</h1>
+      <div style=\"height:20px\">&nbsp;</div>";
+      if($authorID == $news['authorID']){
+        echo"
+        <input type=\"button\" value=\"수정하기\" onClick=\"location.href='news_edit.php?newsID=".$news['newsID']."';\">
+        <input type=\"button\" value=\"삭제하기\" onClick=\"delFunc()\">";
+        echo"<script>
+          function delFunc(){
+            var del = confirm(\"정말 삭제하시겠습니까?\");
+            if (del){
+              location.href = \"news_delete_submit.php?newsID=".$newsID."\";
+            }
+          }
+        </script>";
+      }
+      echo "<div style=\"text-align: right\">
       <p style=\"font-size:15px;\">작성자 ".$news['authorID']." | 기사입력 ".$news['date']."</p></div>
       <hr max-width=\"1232px\" style=\"border-top: 1px solid #000; margin-top: 10px\">
       <div style=\"font-size: 20px; min-height: 400px\">"
@@ -72,20 +86,6 @@
     </div><!-- /.row -->
     </form>
     </div>";
-    if($authorID == $news['authorID']){
-      echo"
-      <input type=\"button\" value=\"수정하기\" onClick=\"location.href='news_edit.php?newsID=".$newsID."';\">
-      <input type=\"button\" value=\"삭제하기\" onClick=\"delFunc()\">";
-      echo"<script>
-        function delFunc(){
-          var del = confirm(\"정말 삭제하시겠습니까?\");
-          if (del){
-            location.href = \"news_delete_submit.php?newsID=".$newsID."\";
-          }
-        }
-      </script>";
-    }
-    //echo""
     ?>
   </body>
 </html>

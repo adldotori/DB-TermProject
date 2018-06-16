@@ -22,7 +22,7 @@
   fwrite($fp,$content);
   fclose($fp);
   $conn = mysqli_connect('localhost','root','taeho','database');
-  $query2 ="insert into news(title,contents,authorID) values('$title','$contentTitle','$authorID')";
+  $query2 ="insert into news(title,contents,authorID,category) values('$title','$contentTitle','$authorID','$category')";
   mysqli_query($conn,$query2);
   echo"<script>location.href='";
   $cookie = explode(':',$_COOKIE["user_info"]);

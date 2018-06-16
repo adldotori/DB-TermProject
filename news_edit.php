@@ -18,6 +18,7 @@
     elseif($authority=='3' || $authority=='4') echo "index3.php";
     else echo "index.php";
     echo"\">";
+    $newsID = $_GET['newsID'];
     $ori_title = "원래제목";
     $ori_content = "원래내용";
     $ori_category = "원래카테고리"; // "정치", "경제", "사회", "문화", "스포츠" 중 하나
@@ -40,19 +41,19 @@
          <div class=\"panel-heading\">기사구분</div>
          <div class=\"panel-body\">
            <label class=\"radio-inline\"><input type=\"radio\" name=\"category\" value=\"정치\"";
-           if $ori_category == "정치" echo "checked = \"checked\""
+           if ($ori_category == "정치") echo "checked = \"checked\"";
            echo">정치</label>
            <label class=\"radio-inline\" style=\"margin:0 0 0 20px\"><input type=\"radio\" name=\"category\" value=\"경제\"";
-           if $ori_category == "경제" echo "checked = \"checked\""
+           if ($ori_category == "경제") echo "checked = \"checked\"";
            echo">경제</label>
            <label class=\"radio-inline\" style=\"margin:0 0 0 20px\"><input type=\"radio\" name=\"category\" value=\"사회\"";
-           if $ori_category == "사회" echo "checked = \"checked\""
+           if ($ori_category == "사회") echo "checked = \"checked\"";
            echo">사회</label>
            <label class=\"radio-inline\" style=\"margin:0 0 0 20px\"><input type=\"radio\" name=\"category\" value=\"문화\"";
-           if $ori_category == "문화" echo "checked = \"checked\""
+           if ($ori_category == "문화") echo "checked = \"checked\"";
            echo">문화</label>
            <label class=\"radio-inline\" style=\"margin:0 0 0 20px\"><input type=\"radio\" name=\"category\" value=\"스포츠\"";
-           if $ori_category == "스포츠" echo "checked = \"checked\""
+           if ($ori_category == "스포츠") echo "checked = \"checked\"";
            echo">스포츠</label>
          </div>
        </div>
