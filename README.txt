@@ -40,3 +40,10 @@ http://emflant.tistory.com/22
 이런식으로 하면 디비 수정은 필요없으면서 다른 연산도 다 가능할 듯
 
 +) member_comments.php의 쿼리문 수정필요 ㅠ
+
+20180615 18:20
+news_delete_submit은 get으로 쉽게 (하지만 보안은 엉터리) 해결
+edit에서는 원래 내용 뜰 수 있음. 이때 db에서 원래 제목이랑 내용 받아오는 부분은 news_view.php와 동일하게 구성될듯
+원래 카테고리를 알아내기 위해서는 title에서 파싱 필요할 것으로 보임 (<정치>성조의뉴스1 <- 이런 식으로 title을 저장하는 방식을 가정했을 때의 얘기)
+
++) 뉴스 작성시 전달된 category 정보를 title에 붙여서 db에 저장해야 되는데 아직 구현 안된듯 (news_post_submit.php)

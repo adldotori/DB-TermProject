@@ -6,9 +6,11 @@
   </head>
   <body>
 <?php
-  $title = $_POST["title"];
+  //$title = $_POST["title"];
+  $newsID=$_GET['newsID'];
   $conn = mysqli_connect('localhost','root','taeho','database');
-  $query1 ="select contents from news where title=$title";
+  //$query1 ="select contents from news where title=$title";
+  $query1 ="select contents from news where newsID=$newsID";
   $row = mysqli_fetch_array(mysqli_query($conn,$query1));
   $contentTitle = $row[0];
   $root = $_SERVER['DOCUMENT_ROOT'];

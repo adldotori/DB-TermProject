@@ -74,9 +74,18 @@
     </div>";
     if($authorID == $news['authorID']){
       echo"
-      <input type=\"button\" value=\"수정하기\" onClick=\"<script>location.href='news_post.php'</script>\">
-      <input type=\"button\" value=\"삭제하기\" onClick=\"<script>var delete = window.confirm('정말 삭제하시겠습니까?'); if(delete) location.href='news_delete_submit.php'</script>\">";
+      <input type=\"button\" value=\"수정하기\" onClick=\"location.href='news_edit.php?newsID=".$newsID."';\">
+      <input type=\"button\" value=\"삭제하기\" onClick=\"delFunc()\">";
+      echo"<script>
+        function delFunc(){
+          var del = confirm(\"정말 삭제하시겠습니까?\");
+          if (del){
+            location.href = \"news_delete_submit.php?newsID=".$newsID."\";
+          }
+        }
+      </script>";
     }
+    //echo""
     ?>
   </body>
 </html>
