@@ -21,7 +21,7 @@
   elseif ($row['authority']==2) echo "<script>location.href=\"index2.php\";</script>";
   elseif ($row['authority']==3 or $row['authority']==4) echo "<script>location.href=\"index3.php\";</script>";
   else {
-    echo "<script>location.href=\"login.php\";</script>";
+    echo "<script>alert(\"입력한 정보가 올바르지 않습니다.\"); location.href=\"login.php\";</script>";
   }
 ?>
   </body>
