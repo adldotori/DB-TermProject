@@ -35,7 +35,7 @@
        </div>
        <div class=\"form-group\">
          <label for=\"newsTitle\">기사내용</label>
-         <textarea type=\"text\" class=\"form-control\" name=\"content\" rows=\"50\" placeholder=\"내용을 입력하세요\" value=\"".$ori_content."\" style=\"height:500px\"></textarea>
+         <textarea type=\"text\" class=\"form-control\" name=\"content\" rows=\"50\" placeholder=\"내용을 입력하세요\" style=\"height:500px\">".$ori_content."</textarea>
        </div>
        <div class=\"panel panel-default\" style=\"width:390px;\">
          <div class=\"panel-heading\">기사구분</div>
