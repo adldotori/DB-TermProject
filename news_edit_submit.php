@@ -2,27 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>나딱뉴스_기사작성</title>
+    <title>나딱뉴스_기사수정</title>
   </head>
   <body>
 <?php
   $title = $_POST["title"];
   $content = $_POST["content"];
   $category = $_POST["category"];
+  $newsID = $_GET["newsID"];
   $cookie = explode(':',$_COOKIE["user_info"]);
   $authorID = $cookie[0];
   $root = $_SERVER['DOCUMENT_ROOT'];
   $i=1;
-  do {
-    $contentTitle = "news".$i.".txt";
-    $path = $root."/news/".$contentTitle;
-    $i++;
-  }while(is_file($path));
-  $fp = fopen($root."/news/".$contentTitle,"w");
+  $conn = mysqli_connect('localhost','root','taeho','database');
+  $query1 ="select contents from news where newsID=$newsID";
+  $result = mysqli_fetch_array(mysqli_query($conn,$query1));
+  $fp = fopen($root."/news/".$result[0],"w");
   fwrite($fp,$content);
   fclose($fp);
-  $conn = mysqli_connect('localhost','root','taeho','database');
-  $query2 ="insert into news(title,contents,authorID,category) values('$title','$contentTitle','$authorID','$category')";
+  $query2 ="update news set title='$title',category='$category' where newsID=$newsID";
   mysqli_query($conn,$query2);
   echo"<script>location.href='";
   $cookie = explode(':',$_COOKIE["user_info"]);

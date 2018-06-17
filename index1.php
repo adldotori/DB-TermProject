@@ -54,8 +54,7 @@
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query1 ="select * from member where nickname='$me'";
               $result1 = mysqli_query($conn,$query1);
-              $rate1 =
-              $query2 ="select * from hits_info order by all_hits* desc";
+              $query2 ="select * from hits_info order by all_hits desc";
               $result2 = mysqli_query($conn,$query2);
               $i=5;
               while(($row = mysqli_fetch_array($result2))&&$i!=0){
