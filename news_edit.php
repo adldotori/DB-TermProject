@@ -39,15 +39,9 @@
          <label for="newsTitle">기사제목</label>
          <input type="text" class="form-control" name="title" placeholder="제목을 입력하세요" value="<?=$row['title']?>">
        </div>
-<<<<<<< HEAD
        <div class="form-group">
          <label for="newsTitle">기사내용</label>
          <textarea type="text" class="form-control" name="content" rows="50" placeholder="내용을 입력하세요" style="height:500px"><?=$contents?></textarea>
-=======
-       <div class=\"form-group\">
-         <label for=\"newsTitle\">기사내용</label>
-         <textarea type=\"text\" class=\"form-control\" name=\"content\" rows=\"50\" placeholder=\"내용을 입력하세요\" style=\"height:500px\">".$ori_content."</textarea>
->>>>>>> origin/yonghee
        </div>
        <div class="panel panel-default" style="width:390px;">
          <div class="panel-heading">기사구분</div>
