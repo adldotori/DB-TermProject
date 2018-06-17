@@ -18,7 +18,6 @@
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query1 ="select count(*) from comment where newsTitle='".$newsTitle."'";
   $result = mysqli_fetch_array(mysqli_query($conn,$query1));
-  echo $result[0].$contents.$writer.$newsTitle.$newsID;
   $commentN =$result[0]+1;
   $query2 = "insert into comment(`comment#`,contents,writer,newsTitle) values($commentN,'$contents','$writer','$newsTitle');";
   $result = mysqli_fetch_array(mysqli_query($conn,$query2));
