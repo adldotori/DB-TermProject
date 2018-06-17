@@ -14,7 +14,7 @@
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
     <div style="heigth:200px">&nbsp;</div>
-    <div style="position:absolute; left:50%;">
+    <div style="position:absolute; width:196px; left:50%; margin-left:-98px;">
       <h1 class="title2">LOGIN</h1>
       <form method="post" action="./login_submit.php">
         <div class="input-group" style="margin:20px 0 20px 0 ">
