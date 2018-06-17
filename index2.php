@@ -59,7 +59,7 @@
               elseif($age == '50-s') $sort = 'weight_hits50_';
               else $sort = 'null';
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info order by ".$sort." desc;";
+              $query ="select * from hits_info where nickname='$nickname' order by ".$sort."*rate desc;";
               $result = mysqli_query($conn,$query);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
