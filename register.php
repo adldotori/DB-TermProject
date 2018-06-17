@@ -16,6 +16,11 @@
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
+    <?php
+      echo "<div style=\"position:fixed; right:20px; top:20px;\"><a href=\"login.php\">
+        로그인</a>
+      </div>";
+    ?>
     <div style="heigth:200px">&nbsp;</div>
     <h1 class="title2">REGISTER</h1>
     <form method="post" action="./register_submit.php">

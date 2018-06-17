@@ -31,6 +31,18 @@
       <button type="button" class="btn btn-default btn-lg">
        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
      </button></a>
+     <?php
+     $cookie = explode(':',$_COOKIE["user_info"]);
+     if($authority=='1') $authStr = '관리자';
+     elseif($authority=='2') $authStr = '기자(승인됨)';
+     elseif($authority=='3') $authStr = '기자(미승인)';
+     else $authStr = '일반회원';
+     if($cookie[0])
+       $nickname = $cookie[0];
+     echo "<div style=\"position:fixed; right:20px; top:20px;\">
+       $nickname | $authStr
+     </div>";
+     ?>
      <div style="heigth:200px">&nbsp;</div>
      <h1 class="title2">기사수정</h1>
      <div style="heigth:200px">&nbsp;</div>

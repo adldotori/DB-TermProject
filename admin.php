@@ -14,6 +14,13 @@
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
+    <?php
+      $cookie = explode(':',$_COOKIE['user_info']);
+      $nickname = $cookie[0];
+      echo "<div style=\"position:fixed; right:20px; top:20px;\">
+        $nickname | 관리자
+      </div>";
+    ?>
     <div style="heigth:200px">&nbsp;</div>
     <div>
       <div style="float: left; margin-right: 300px">

@@ -50,6 +50,16 @@
             <?php
               $cookie = explode(':',$_COOKIE["user_info"]);
               $nickname = $cookie[0];
+              $authority = $cookie[1];
+              if($authority=='1') $authStr = '관리자';
+              elseif($authority=='2') $authStr = '기자(승인됨)';
+              elseif($authority=='3') $authStr = '기자(미승인)';
+              else $authStr = '일반회원';
+              if($cookie[0])
+                $nickname = $cookie[0];
+              echo "<div style=\"position:fixed; right:20px; top:20px;\">
+                $nickname | $authStr
+              </div>";
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from comment where writer='$nickname'";
               $result = mysqli_query($conn,$query);

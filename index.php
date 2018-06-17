@@ -43,11 +43,8 @@
           </thead>
           <tbody>
             <?php
-              $cookie = explode(':',$_COOKIE['user_info']);
-              $age = $cookie[2];
-              $nickname = $cookie[0];
-              echo "<div style=\"position:fixed; right:20px; top:20px;\">
-                로그인
+              echo "<div style=\"position:fixed; right:20px; top:20px;\"><a href=\"login.php\">
+                로그인</a>
               </div>";
               setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','database');
