@@ -54,7 +54,7 @@
                 </div>";
               }
               else if($row[0]==4){
-                echo "<div style=\"position:fixed; right:100px; top:20px;\">
+                echo "<div style=\"position:fixed; right:20px; top:20px;\">
                   $nickname | 일반회원
                 </div>";
               }
