@@ -49,7 +49,7 @@
               $query1 = "select authority from member where nickname='$nickname'";
               $row = mysqli_fetch_array(mysqli_query($conn,$query1));
               if($row[0]==3){
-                echo "<div style=\"position:fixed; right:100px; top:20px;\">
+                echo "<div style=\"position:fixed; right:20px; top:20px;\">
                   $nickname | 기자 (미승인됨)
                 </div>";
               }
