@@ -48,7 +48,7 @@
               </div>";
               setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info where nickname='admin' order by all_hits desc";
+              $query ="select * from hits_info_NotUser order by all_hits desc";
               $result = mysqli_query($conn,$query);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
@@ -57,7 +57,7 @@
                 else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\" $big $leftsort\">".(5-$i)."</th>
-                  <td $big $leftsort\">".$row['title']."</td>
+                  <td $big $leftsort\">"."<".$row['category'].">".$row['title']."</td>
                   <td $big $centersort\">".$row['authorID']."</td>
                   <td $big $centersort\">".$row['date']."</td>
                   <td $big $rightsort\">".$row['all_hits']."</td>

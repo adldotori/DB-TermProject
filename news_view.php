@@ -34,7 +34,7 @@
       elseif($age == '20s') $hits = '`20hits`';
       elseif($age == '30-40s') $hits = '`30-40hits`';
       elseif($age == '50-s') $hits = '`50-hits`';
-      else $agehits = 'hits';
+      else $hits = 'hits';
       $conn = mysqli_connect('localhost','root','taeho','database');
       $query1 ="update news set ".$hits."=".$hits."+1 where newsID = ".$newsID;
       mysqli_query($conn,$query1);

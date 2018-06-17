@@ -14,7 +14,7 @@
   $pw = $_POST["pw"];
 
   $conn = mysqli_connect('localhost','root','taeho','database');
-  $query ="select * from member where ID=\"".$id."\" and password=\"".$pw."\"";
+  $query =sprintf("select * from member where ID='%s' and password='%s'",$id,$pw);
   $row = mysqli_fetch_array(mysqli_query($conn,$query));
   setcookie("user_info",$row['nickname'].":".$row['authority'].":".$row['age'],time()+3600*24,"/");
   if($row['authority']==1) echo "<script>location.href=\"index1.php\";</script>";

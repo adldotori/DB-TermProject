@@ -65,7 +65,7 @@
                 $i++;
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$i."</th>
-                  <td>".$row['title']."</td>
+                  <td>"."<".$row['category'].">".$row['title']."</td>
                   <td>".$row['authorID']."</td>
                   <td>".$row['date']."</td>
                   <td>".$row['all_hits']."</td>
