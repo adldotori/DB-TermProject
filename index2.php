@@ -44,10 +44,13 @@
           </tr>
           </thead>
           <tbody>
-            <div style="position:fixed; right:20px; top:20px;">
-              nickname | 기자 (승인됨/미승인) <!--관리자-->
-            </div>
             <?php
+              $cookie = explode(':',$_COOKIE['user_info']);
+              $age = $cookie[2];
+              $nickname = $cookie[0];
+              echo "<div style=\"position:fixed; right:100px; top:20px;\">
+                $nickname | 기자(승인됨)
+              </div>";
               $cookie = explode(':',$_COOKIE['user_info']);
               $age = $cookie[2];
               if($age == '10s') $sort = 'weight_hits10';

@@ -41,20 +41,30 @@
           </tr>
           </thead>
           <tbody>
-            <div style="position:fixed; right:20px; top:20px;">
-              nickname | 기자 (승인됨/미승인) <!--관리자-->
-            </div>
             <?php
               $cookie = explode(':',$_COOKIE['user_info']);
               $age = $cookie[2];
+              $nickname = $cookie[0];
+              $conn = mysqli_connect('localhost','root','taeho','database');
+              $query1 = "select authority from member where nickname='$nickname'";
+              $row = mysqli_fetch_array(mysqli_query($conn,$query1));
+              if($row[0]==3){
+                echo "<div style=\"position:fixed; right:100px; top:20px;\">
+                  $nickname | 기자 (미승인됨)
+                </div>";
+              }
+              else if($row[0]==4){
+                echo "<div style=\"position:fixed; right:100px; top:20px;\">
+                  $nickname | 일반회원
+                </div>";
+              }
               if($age == '10s') $sort = 'weight_hits10';
               elseif($age == '20s') $sort = 'weight_hits20';
               elseif($age == '30-40s') $sort = 'weight_hits30_40';
               elseif($age == '50-s') $sort = 'weight_hits50_';
               else $sort = 'null';
-              $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info order by ".$sort." desc;";
-              $result = mysqli_query($conn,$query);
+              $query2 ="select * from hits_info order by ".$sort." desc;";
+              $result = mysqli_query($conn,$query2);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
                 $i--;
