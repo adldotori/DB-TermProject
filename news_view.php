@@ -23,7 +23,7 @@
       else{
         $stateStr = '<a href=login.php>로그인</a>';
       }
-      echo "<div style=\"position:fixed; right:20px; top:20px;\">".$stateStr."</div>";
+      echo "<div style=\"position:absolute; right:20px; top:20px;\">".$stateStr."</div>";
     ?>
     <?php
       $newsID=$_GET['newsID'];

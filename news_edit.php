@@ -39,7 +39,7 @@
      else $authStr = '일반회원';
      if($cookie[0])
        $nickname = $cookie[0];
-     echo "<div style=\"position:fixed; right:20px; top:20px;\">
+     echo "<div style=\"position:absolute; right:20px; top:20px;\">
        $nickname | $authStr
      </div>";
      ?>
