@@ -77,8 +77,19 @@
       while($comment = mysqli_fetch_array($result)){
         echo $comment['writer']." : ".$comment['contents'];
         if($comment['writer'] == $authorID){
-          echo "<input type='button' value='삭제' onclick=\"delComment".$comment[0]."();\" style=\"font-size:13px; margin-left:20px;\">
+          echo "<input type='button' value='수정' onclick=\"editComment".$comment[0]."();\" style=\"font-size:13px; margin-left:20px;\">
+          <input type='button' value='삭제' onclick=\"delComment".$comment[0]."();\" style=\"font-size:13px;\">
           <script>
+            function editComment".$comment[0]."(){
+              var commentField = document.getElementById(\"cField\");
+              var commentBtn = document.getElementById(\"cBtn\");
+              var commentAction = document.getElementById(\"cAction\");
+              var commentId = document.getElementById(\"cId\");
+              commentField.setAttribute(\"value\", \"".$comment['contents']."\");
+              cBtn.innerHTML = \"댓글수정\";
+              commentAction.setAttribute(\"action\", \"./comment_edit.php\");
+              commentId.setAttribute(\"value\", \"".$comment[0]."\");
+            }
             function delComment".$comment[0]."(){
               var del = confirm(\"정말 삭제하시겠습니까?\");
               if(del){
@@ -91,15 +102,18 @@
       }
       echo "</h1>
       <div style=\"height:20px\">&nbsp;</div>";
-      echo "<form method=\"post\" action=\"./comment_submit.php\">
+      echo "<form method=\"post\" action=\"./comment_submit.php\" id=\"cAction\">
     <div class=\"row\">
       <div class=\"col-lg-6\">
         <div class=\"input-group\">
-          <input type=\"text\" name=\"contents\" class=\"form-control\" placeholder=\"";if($_COOKIE['user_info']) echo "\""; else echo "로그인 후 이용가능합니다.\" disabled"; echo ">
+          <input type=\"text\" id=\"cField\" name=\"contents\" class=\"form-control\" placeholder=\"";
+          if($_COOKIE['user_info']) echo "\""; else echo "로그인 후 이용가능합니다.\" disabled";
+          echo " value=\"\">
           <input type=\"hidden\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
           <input type=\"hidden\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
+          <input type=\"hidden\" name=\"commentN\" value=\"\" class=\"form-control\" id=\"cID\">
           <span class=\"input-group-btn\" type=\"submit\">
-            <button type=\"submit\" class=\"btn btn-default\">댓글달기</button>
+            <button type=\"submit\" class=\"btn btn-default\" id=\"cBtn\">댓글달기</button>
           </span>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
