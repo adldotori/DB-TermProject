@@ -9,14 +9,6 @@
     </style>
   </head>
   <body>
-    <!--
-    <a href="news.php">
-    <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 전체뉴스
-    </button></a>
-    <div style="heigth:200px">&nbsp;</div>
-    <div style="max-width: 1232px;">
-    -->
     <?php
       $newsID=$_GET['newsID'];
       $cookie = explode(':',$_COOKIE['user_info']);
@@ -46,13 +38,11 @@
       </button></a>
       ";
       if($authorID == $news['authorID']){
-        //<input type=\"button\" value=\"수정하기\" onClick=\"location.href='news_edit.php?newsID=".$news['newsID']."';\">
-        //<input type=\"button\" value=\"삭제하기\" onClick=\"delFunc()\">";
         echo"
         <button type=\"button\" class=\"btn btn-default btn-lg\" onClick=\"location.href='news_edit.php?newsID=".$news['newsID']."';\" style=\"margin-left:20px\">
           <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>수정하기
         </button>
-        <button type=\"button\" class=\"btn btn-default btn-lg\" onClick=\"location.href='news_edit.php?newsID=".$news['newsID']."';\" style=\"margin-left:20px\">
+        <button type=\"button\" class=\"btn btn-default btn-lg\" onClick=\"delFunc();\" style=\"margin-left:20px\">
           <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>삭제하기
         </button>
         ";
@@ -85,7 +75,19 @@
       $query2 = "select * from comment where newsTitle='".$news['title']."'";
       $result = mysqli_query($conn,$query2);
       while($comment = mysqli_fetch_array($result)){
-        echo $comment['writer']." : ".$comment['contents']."<br>";
+        echo $comment['writer']." : ".$comment['contents'];
+        if($comment['writer'] == $authorID){
+          echo "<input type='button' value='삭제' onclick=\"delComment".$comment[0]."();\" style=\"font-size:13px; margin-left:20px;\">
+          <script>
+            function delComment".$comment[0]."(){
+              var del = confirm(\"정말 삭제하시겠습니까?\");
+              if(del){
+                location.href = \"comment_delete_submit.php?newsID=".$newsID."&commentN=".$comment[0]."\";
+              }
+            }
+          </script>";
+        }
+        echo "<br><div style=\"height:10px\">&nbsp;</div>";
       }
       echo "</h1>
       <div style=\"height:20px\">&nbsp;</div>";
