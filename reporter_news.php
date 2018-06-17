@@ -55,7 +55,7 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               $nickname = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info where authorID='$nickname' order by date desc";
+              $query ="select * from hits_info where authorID='$nickname' and nickname='$nickname' order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
