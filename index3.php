@@ -63,7 +63,7 @@
               elseif($age == '30-40s') $sort = 'weight_hits30_40';
               elseif($age == '50-s') $sort = 'weight_hits50_';
               else $sort = 'null';
-              $query2 ="select * from hits_info order by ".$sort." desc;";
+              $query2 ="select * from hits_info where nickname='$nickname' order by ".$sort."*rate desc;";
               $result = mysqli_query($conn,$query2);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){

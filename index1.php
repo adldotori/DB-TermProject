@@ -52,12 +52,10 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               $me = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query1 ="select * from member where nickname='$me'";
-              $result1 = mysqli_query($conn,$query1);
-              $query2 ="select * from hits_info order by all_hits desc";
-              $result2 = mysqli_query($conn,$query2);
+              $query ="select title,authorID,date,all_hits,newsID from hits_info where nickname='admin' order by all_hits desc";
+              $result = mysqli_query($conn,$query);
               $i=5;
-              while(($row = mysqli_fetch_array($result2))&&$i!=0){
+              while(($row = mysqli_fetch_array($result))&&$i!=0){
                 $i--;
                 if($i==4) {$big =  "style=\"font-size:18px;font-weight:bold;color:#c65ff9;"; $leftsort="text-align:left;"; $centersort="text-align:center;"; $rightsort="text-align:right;";}
                 else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}

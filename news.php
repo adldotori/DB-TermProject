@@ -52,8 +52,12 @@
             </thead>
           <tbody>
             <?php
+              $nickname = 'admin';
+              $cookie = explode(':',$_COOKIE['user_info']);
+              if($cookie[0])
+                $nickname = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select * from hits_info order by date desc";
+              $query ="select * from hits_info where nickname='$nickname' order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
