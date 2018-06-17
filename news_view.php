@@ -103,7 +103,7 @@
             function delComment".$comment[0]."(){
               var del = confirm(\"정말 삭제하시겠습니까?\");
               if(del){
-                location.href = \"comment_delete_submit.php?newsID=".$newsID."&commentN=".$comment[0]."\";
+                location.href = \"comment_delete_submit.php?newsTitle=".$news['title']."&commentN=".$comment[0]."\";
               }
             }
           </script>";
