@@ -19,6 +19,16 @@
       elseif($age == '30-40s') $hits = '`30-40hits`';
       elseif($age == '50-s') $hits = '`50-hits`';
       else $agehits = 'hits';
+      $authority = $cookie[1];
+      if($authority=='1') $authStr = '관리자';
+      elseif($authority=='2') $authStr = '기자(승인됨)';
+      elseif($authority=='3') $authStr = '기자(미승인)';
+      else $authStr = '일반회원';
+      if($cookie[0])
+        $nickname = $cookie[0];
+      echo "<div style=\"position:fixed; right:20px; top:20px;\">
+        $nickname | $authStr
+      </div>";
       $conn = mysqli_connect('localhost','root','taeho','database');
       $query1 ="update news set ".$hits."=".$hits."+1 where newsID = ".$newsID;
       mysqli_query($conn,$query1);
@@ -93,7 +103,7 @@
             function delComment".$comment[0]."(){
               var del = confirm(\"정말 삭제하시겠습니까?\");
               if(del){
-                location.href = \"comment_delete_submit.php?newsID=".$newsID."&commentN=".$comment[0]."\";
+                location.href = \"comment_delete_submit.php?newsTitle=".$news['title']."&commentN=".$comment[0]."\";
               }
             }
           </script>";
@@ -111,7 +121,7 @@
           echo " value=\"\">
           <input type=\"hidden\" name=\"newsTitle\" value=\"".$news['title']."\" class=\"form-control\">
           <input type=\"hidden\" name=\"newsID\" value=\"".$news['newsID']."\" class=\"form-control\">
-          <input type=\"hidden\" name=\"commentN\" value=\"\" class=\"form-control\" id=\"cID\">
+          <input type=\"hidden\" name=\"commentN\" value=\"\" class=\"form-control\" id=\"cId\">
           <span class=\"input-group-btn\" type=\"submit\">
             <button type=\"submit\" class=\"btn btn-default\" id=\"cBtn\">댓글달기</button>
           </span>

@@ -6,7 +6,7 @@
   </head>
   <body>
 <?php
-  $newsID=$_GET['newsID'];
+  $newsTitle=$_GET['newsTitle'];
   $commentN = $_GET['commentN'];
   $conn = mysqli_connect('localhost','root','taeho','database');
   $query ="delete from comment where newsID=$newsID and `comment#`=$commentN";
