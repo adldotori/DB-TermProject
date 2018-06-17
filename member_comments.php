@@ -65,10 +65,13 @@
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
+                $query2 ="select * from news where writer=".$row['newsID'];
+                $result2 = mysqli_fetch_array(mysqli_query($conn,$query2));
+                $newsTitle = $result2['title'];
                 $i++;
                 echo "<tr onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$i."</th>
-                  <td>".$row['newsTitle']."</td>
+                  <td>".$newsTitle."</td>
                   <td>".$row['contents']."</td>
                   </tr>";
               }

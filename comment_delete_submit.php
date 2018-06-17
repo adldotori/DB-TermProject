@@ -7,10 +7,9 @@
   <body>
 <?php
   $newsID = $_GET['newsID'];
-  $newsTitle=$_GET['newsTitle'];
   $commentN = $_GET['commentN'];
   $conn = mysqli_connect('localhost','root','taeho','database');
-  $query ="delete from comment where newsTitle='$newsTitle' and `comment#`=$commentN";
+  $query ="delete from comment where newsID='$newsID' and `comment#`=$commentN";
   $row = mysqli_fetch_array(mysqli_query($conn,$query));
   echo"<script>location.href='news_view.php?newsID=".$newsID."'</script>";
 ?>

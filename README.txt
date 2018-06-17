@@ -57,3 +57,9 @@ news_edit.php를 띄울때 기사의 원래 제목과 내용을 보여주기 위
 그 방식이 news_view.php에서 쓴 방식과 동일할 것으로 보임. 하지만 내가 건드리기 무서워서 태호에게 넘긴다.
 기사 제목이랑 내용 받아와서 $ori_title이랑 $ori_content에 넣기만 하면 다른건 다 되도록 해놓았음.
 + 원래카테고리도 $ori_category에 넣어야 됨!
+
+20180618 06:20
+er-diagam에서 comment entity set의 referencing entity set이였나? 함튼 news랑 이어져있는데
+news에서 키값이 title이 아니라 id이기 때문에
+comment 릴레이션은 newsTitle을 어트리뷰트로 가질게 아니라 newsID를 어트리뷰트로 가져야 함.
+db를 그렇게 수정하고 모든 쿼리문들을 수정함. 정상작동 확인함.

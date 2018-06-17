@@ -88,7 +88,10 @@
       <h1 class=\"title2\" style=\"font-size:24px\">Comments</h1>
       <br>
       <h1 class=\"title2\" style=\"font-size:20px\">";
-      $query2 = "select * from comment where newsTitle='".$news['title']."'";
+      $query2_1 = "select * from news where title='".$news['title']."'";
+      $row_1 = mysqli_fetch_array(mysqli_query($conn,$query2_1));
+      $newsID = $row_1['newsID'];
+      $query2 = "select * from comment where newsID='".$newsID."'";
       $result = mysqli_query($conn,$query2);
       while($comment = mysqli_fetch_array($result)){
         echo $comment['writer']." : ".$comment['contents'];
@@ -109,7 +112,7 @@
             function delComment".$comment[0]."(){
               var del = confirm(\"정말 삭제하시겠습니까?\");
               if(del){
-                location.href = \"comment_delete_submit.php?newsID=".$news['newsID']."&newsTitle=".$news['title']."&commentN=".$comment[0]."\";
+                location.href = \"comment_delete_submit.php?newsID=".$news['newsID']."&commentN=".$comment[0]."\";
               }
             }
           </script>";
