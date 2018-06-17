@@ -22,6 +22,22 @@
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> home
     </button></a>
+    <?php
+    if($_COOKIE["user_info"]){
+      $cookie = explode(':',$_COOKIE["user_info"]);
+      $authority = $cookie[1];
+      $nickname = $cookie[0];
+      if($authority=='1') $authStr = '관리자';
+      elseif($authority=='2') $authStr = '기자(승인됨)';
+      elseif($authority=='3') $authStr = '기자(미승인)';
+      else $authStr = '일반회원';
+      $stateStr = $nickname." | ".$authStr;
+    }
+    else{
+      $stateStr = '<a href=login.php>로그인</a>';
+    }
+    echo "<div style=\"position:fixed; right:20px; top:20px;\">".$stateStr."</div>";
+    ?>
     <div style="heigth:200px">&nbsp;</div>
     <h1 class="title2">NEWS</h1>
     <div style="height:20px">&nbsp;</div>
