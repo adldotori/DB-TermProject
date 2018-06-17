@@ -46,7 +46,7 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               $age = $cookie[2];
               $nickname = $cookie[0];
-              echo "<div style=\"position:fixed; right:100px; top:20px;\">
+              echo "<div style=\"position:fixed; right:20px; top:20px;\">
                 로그인
               </div>";
               setcookie("user_info","",time()+3600*24,"/");
