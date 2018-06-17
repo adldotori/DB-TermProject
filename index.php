@@ -42,6 +42,9 @@
           </tr>
           </thead>
           <tbody>
+            <div style="position:fixed; right:20px; top:20px;">
+              nickname | 기자 (승인됨/미승인) <!--관리자-->
+            </div>
             <?php
               setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','database');
