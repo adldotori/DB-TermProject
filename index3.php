@@ -27,7 +27,7 @@
       <div style="height:70px">&nbsp;</div>
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading"><b>Top5 추천기사목록</b></div>
+        <div class="panel-heading"><b>Top5 추천기사</b></div>
 
         <!-- Table -->
         <table class="table">
@@ -72,7 +72,7 @@
                 else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\" $big $leftsort\">".(5-$i)."</th>
-                  <td $big $leftsort\">".$row['title']."</td>
+                  <td $big $leftsort\">"."<".$row['category'].">".$row['title']."</td>
                   <td $big $centersort\">".$row['authorID']."</td>
                   <td $big $centersort\">".$row['date']."</td>
                   <td $big $rightsort\">".$row['all_hits']."</td>
