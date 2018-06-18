@@ -52,7 +52,7 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               $me = $cookie[0];
               $conn = mysqli_connect('localhost','root','taeho','database');
-              $query ="select title,authorID,date,all_hits,newsID from hits_info where nickname='admin' order by all_hits desc";
+              $query ="select * from hits_info where nickname='admin' order by all_hits desc";
               $result = mysqli_query($conn,$query);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
