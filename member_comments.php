@@ -65,7 +65,7 @@
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
-                $query2 ="select * from news where writer=".$row['newsID'];
+                $query2 ="select * from news where newsID=".$row['newsID'];
                 $result2 = mysqli_fetch_array(mysqli_query($conn,$query2));
                 $newsTitle = $result2['title'];
                 $i++;

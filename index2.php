@@ -15,6 +15,10 @@
           <button type="button" class="btn btn-default">로그아웃</button></a>
         </div>
         <div class="btn-group" role="group">
+          <a href="member_comments.php">
+          <button type="button" class="btn btn-default">내가 쓴 댓글</button></a>
+        </div>
+        <div class="btn-group" role="group">
           <a href="reporter_news.php">
           <button type="button" class="btn btn-default">내가 쓴 기사</button></a>
         </div>
