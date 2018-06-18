@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>나딱뉴스</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -43,9 +44,7 @@
           </thead>
           <tbody>
             <?php
-              echo "<div style=\"position:fixed; right:20px; top:20px;\"><a href=\"login.php\">
-                로그인</a>
-              </div>";
+              echo "<div style=\"position:fixed; right:20px; top:20px;\"><a href=\"login.php\">로그인</a></div>";
               setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','database');
               $query ="select * from hits_info_NotUser order by all_hits desc";
