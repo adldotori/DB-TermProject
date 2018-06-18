@@ -72,7 +72,7 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               if($cookie[0])
                 $nickname = $cookie[0];
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query ="select * from hits_info where nickname='$nickname' order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;

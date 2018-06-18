@@ -60,7 +60,7 @@
               echo "<div style=\"position:fixed; right:20px; top:20px;\">
                 $nickname | $authStr
               </div>";
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query ="select * from comment where writer='$nickname'";
               $result = mysqli_query($conn,$query);
               $i =0;

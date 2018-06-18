@@ -19,7 +19,7 @@
     else echo "index.php";
     echo"\">";
     $newsID = $_GET['newsID'];
-    $conn = mysqli_connect('localhost','root','taeho','database');
+    $conn = mysqli_connect('localhost','root','taeho','newsDB');
     $query1 ="select * from news where newsID=$newsID";
     $row = mysqli_fetch_array(mysqli_query($conn,$query1));
     $root = $_SERVER['DOCUMENT_ROOT'];

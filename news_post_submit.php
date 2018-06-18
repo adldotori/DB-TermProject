@@ -21,7 +21,7 @@
   $fp = fopen($root."/news/".$contentTitle,"w");
   fwrite($fp,$content);
   fclose($fp);
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $query2 ="insert into news(title,contents,authorID,category) values('$title','$contentTitle','$authorID','$category')";
   mysqli_query($conn,$query2);
   echo"<script>location.href='";

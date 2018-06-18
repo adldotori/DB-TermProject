@@ -14,7 +14,7 @@
   $authorID = $cookie[0];
   $root = $_SERVER['DOCUMENT_ROOT'];
   $i=1;
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $query1 ="select contents from news where newsID=$newsID";
   $result = mysqli_fetch_array(mysqli_query($conn,$query1));
   $fp = fopen($root."/news/".$result[0],"w");

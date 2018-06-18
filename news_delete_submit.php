@@ -7,7 +7,7 @@
   <body>
 <?php
   $newsID=$_GET['newsID'];
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $query1 ="select contents from news where newsID=$newsID";
   $row = mysqli_fetch_array(mysqli_query($conn,$query1));
   $contentTitle = $row[0];

@@ -51,7 +51,7 @@
               </div>";
               $cookie = explode(':',$_COOKIE['user_info']);
               $me = $cookie[0];
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query ="select * from hits_info where nickname='admin' order by all_hits desc";
               $result = mysqli_query($conn,$query);
               $i=5;

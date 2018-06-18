@@ -31,7 +31,7 @@
         <?php
           echo "<form method=\"post\" action=\"admin_submit.php\">
           ";
-          $conn = mysqli_connect('localhost','root','taeho','database');
+          $conn = mysqli_connect('localhost','root','taeho','newsDB');
           $query ="select * from member where authority=3";
           $result = mysqli_query($conn,$query);
           while($row = mysqli_fetch_array($result)){
@@ -52,7 +52,7 @@
         <?php
           echo "<form method=\"post\" action=\"admin_submit2.php\">
           ";
-          $conn = mysqli_connect('localhost','root','taeho','database');
+          $conn = mysqli_connect('localhost','root','taeho','newsDB');
           $query ="select * from member where authority!=1";
           $result = mysqli_query($conn,$query);
           while($row = mysqli_fetch_array($result)){
