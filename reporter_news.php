@@ -57,7 +57,7 @@
               echo "<div style=\"position:fixed; right:20px; top:20px;\">
                 $nickname | 기자(승인됨)
               </div>";
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query ="select * from hits_info where authorID='$nickname' and nickname='$nickname' order by date desc";
               $result = mysqli_query($conn,$query);
               $i =0;

@@ -45,7 +45,7 @@
               $cookie = explode(':',$_COOKIE['user_info']);
               $age = $cookie[2];
               $nickname = $cookie[0];
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query1 = "select authority from member where nickname='$nickname'";
               $row = mysqli_fetch_array(mysqli_query($conn,$query1));
               if($row[0]==3){

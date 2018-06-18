@@ -12,7 +12,7 @@
   $nickname = $_POST["nickname"];
   $age = $_POST["age"];
   $authority = $_POST["authority"];
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $query1 ="select * from member where ID='$id';";
   $row1 = mysqli_fetch_array(mysqli_query($conn,$query1));
   $query2 ="select * from member where nickname='$nickname';";

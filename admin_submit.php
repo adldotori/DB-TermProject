@@ -13,7 +13,7 @@
     $id = $_POST["id"];
     $cnt = count($id);
     for ($i=0; $i<$cnt; $i++){
-      $conn = mysqli_connect('localhost','root','taeho','database');
+      $conn = mysqli_connect('localhost','root','taeho','newsDB');
       $query ="update member set authority=2 where id='$id[$i]'";
       mysqli_query($conn,$query);
     }

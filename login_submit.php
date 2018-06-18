@@ -12,7 +12,7 @@
 <?php
   $id = $_POST["id"];
   $pw = $_POST["pw"];
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $ID =   mysqli_real_escape_string($conn,$id);
   $PW =   mysqli_real_escape_string($conn,$pw);
   $query =sprintf("SELECT * from member where ID='%s' and password='%s'",$ID,$PW);

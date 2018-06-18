@@ -47,7 +47,7 @@
                 로그인</a>
               </div>";
               setcookie("user_info","",time()+3600*24,"/");
-              $conn = mysqli_connect('localhost','root','taeho','database');
+              $conn = mysqli_connect('localhost','root','taeho','newsDB');
               $query ="select * from hits_info_NotUser order by all_hits desc";
               $result = mysqli_query($conn,$query);
               $i=5;

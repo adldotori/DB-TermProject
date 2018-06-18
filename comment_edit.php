@@ -16,7 +16,7 @@
   $contents = $_POST["contents"];
   $newsTitle = $_POST["newsTitle"];
   $newsID = $_POST["newsID"];
-  $conn = mysqli_connect('localhost','root','taeho','database');
+  $conn = mysqli_connect('localhost','root','taeho','newsDB');
   $query ="update comment set contents='$contents' where newsID='$newsID' and `comment#`=$commentN;";
   $result = mysqli_fetch_array(mysqli_query($conn,$query));
   echo "<script>location.href='news_view.php?newsID=".$newsID."'</script>";
