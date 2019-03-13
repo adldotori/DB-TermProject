@@ -53,6 +53,19 @@
         <span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span> 전체뉴스
       </button></a>
       ";
+	if($news['category']=='정치')
+             $color = "#b000b2";
+        elseif($news['category']=='경제')
+             $color = "#ff2a60";
+        elseif($news['category']=='문화')
+             $color = "#009c49";
+        elseif($news['category']=='사회')
+             $color = "#2c00cc";
+        elseif($news['category']=='스포츠')
+             $color = "#2f79b2";
+        else
+             $color = "#0000ff";
+
       if($authorID == $news['authorID']){
         echo"
         <button type=\"button\" class=\"btn btn-default btn-lg\" onClick=\"location.href='news_edit.php?newsID=".$news['newsID']."';\" style=\"margin-left:20px\">
@@ -76,7 +89,7 @@
       <div style=\"max-width: 1232px;\">
       ";
       echo "
-      <h1 class=\"title2\"><".$news['category']."> ".$news['title']."</h1>
+      <h1 class=\"title2\"><span style=\"font-size:32px;font-weight:bold;color:".$color."\">&lt;".$news['category']."&gt;</span>".$news['title']."</h1>
       <div style=\"height:20px\">&nbsp;</div>";
       echo "<div style=\"text-align: right\">
       <p style=\"font-size:15px;\">작성자 ".$news['authorID']." | 기사입력 ".$news['date']."</p></div>

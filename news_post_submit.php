@@ -18,7 +18,8 @@
     $path = $root."/news/".$contentTitle;
     $i++;
   }while(is_file($path));
-  $fp = fopen($root."/news/".$contentTitle,"w");
+  $filename = $root."/news/".$contentTitle;
+  $fp = fopen($filename,"w");
   fwrite($fp,$content);
   fclose($fp);
   $conn = mysqli_connect('localhost','root','taeho','newsDB');

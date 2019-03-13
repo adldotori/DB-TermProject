@@ -65,13 +65,26 @@
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
-                $query2 ="select * from news where newsID=".$row['newsID'];
+               	$query2 ="select * from news where newsID=".$row['newsID'];
                 $result2 = mysqli_fetch_array(mysqli_query($conn,$query2));
                 $newsTitle = $result2['title'];
                 $i++;
-                echo "<tr onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
+		if($result2['category']=='정치')
+                  $color = "#b000b2";
+                elseif($result2['category']=='경제')
+                  $color = "#ff2a60";
+                elseif($result2['category']=='문화')
+                  $color = "#009c49";
+                elseif($result2['category']=='사회')
+                  $color = "#2c00cc";
+                elseif($result2['category']=='스포츠')
+                  $color = "#2f79b2";
+                else
+                  $color = "#0000ff";
+
+                echo "<tr onclick=\"location.href='news_view.php?newsID=".$result2['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\">".$i."</th>
-                  <td>".$newsTitle."</td>
+                  <td><span style=\"font-size:11pt;font-weight:bold;color:".$color."\">&lt;".$result2['category']."&gt;</span>".$newsTitle."</td>
                   <td>".$row['contents']."</td>
                   </tr>";
               }

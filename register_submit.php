@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>나딱뉴스_로그인</title>
+    <title>나딱뉴스_로그인</title>$
   </head>
   <body>
 <?php
@@ -46,6 +46,7 @@
   }
   $query3 ="insert into member(ID,password,nickname,authority,age) values('".$id."','".$pw."','".$nickname."',$authority,'".$age."');";
   mysqli_query($conn,$query3);
+  $query4 = "select pw from member where id=".$id."";
   echo "<script>alert(\"회원가입 성공!\");location.href=\"index.php\"</script>";
 ?>
   </body>

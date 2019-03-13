@@ -44,19 +44,33 @@
           </thead>
           <tbody>
             <?php
+	      error_reporting(E_ALL);
+	      ini_set("display_errors", 1);
               echo "<div style=\"position:fixed; right:20px; top:20px;\"><a href=\"login.php\">로그인</a></div>";
               setcookie("user_info","",time()+3600*24,"/");
               $conn = mysqli_connect('localhost','root','taeho','newsDB');
-              $query ="select * from hits_info_NotUser order by all_hits desc";
+	      $query ="select * from hits_info_NotUser order by all_hits desc";
               $result = mysqli_query($conn,$query);
               $i=5;
               while(($row = mysqli_fetch_array($result))&&$i!=0){
-                $i--;
+		if($row['category']=='정치')
+                  $color = "#b000b2";
+                elseif($row['category']=='경제')
+                  $color = "#ff2a60";
+                elseif($row['category']=='문화')
+                  $color = "#009c49";
+                elseif($row['category']=='사회')
+                  $color = "#2c00cc";
+                elseif($row['category']=='스포츠')
+                  $color = "#2f79b2";
+                else
+                  $color = "#0000ff";		        
+		$i--;
                 if($i==4) {$big =  "style=\"font-size:18px;font-weight:bold;color:#c65ff9;"; $leftsort="text-align:left;"; $centersort="text-align:center;"; $rightsort="text-align:right;";}
                 else {$big=""; $leftsort="style=\"text-align:left;"; $centersort="style=\"text-align:center;"; $rightsort="style=\"text-align:right;";}
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\" $big $leftsort\">".(5-$i)."</th>
-                  <td $big $leftsort\">"."<".$row['category'].">".$row['title']."</td>
+                  <td $big $leftsort\"><span style=\"font-size:11pt;font-weight:bold; color:".$color."\">&lt;".$row['category']."&gt;</span>".$row['title']."</td>
                   <td $big $centersort\">".$row['authorID']."</td>
                   <td $big $centersort\">".$row['date']."</td>
                   <td $big $rightsort\">".$row['all_hits']."</td>

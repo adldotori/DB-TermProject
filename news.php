@@ -77,10 +77,22 @@
               $result = mysqli_query($conn,$query);
               $i =0;
               while($row = mysqli_fetch_array($result)){
+		if($row['category']=='정치')
+                  $color = "#b000b2";
+                elseif($row['category']=='경제')
+                  $color = "#ff2a60";
+                elseif($row['category']=='문화')
+                  $color = "#009c49";
+                elseif($row['category']=='사회')
+                  $color = "#2c00cc";
+                elseif($row['category']=='스포츠')
+                  $color = "#2f79b2";
+                else
+                  $color = "#0000ff";
                 $i++;
                 echo "<tr onclick=\"location.href='news_view.php?newsID=".$row['newsID']."'\" onMouseOver=\"this.style.backgroundColor='#e6e6e6';\" onMouseOut=\"this.style.backgroundColor=''\"; style=\" cursor: pointer;\">
                   <th scope=\"row\" style=\"text-align:left\">".$i."</th>
-                  <td style=\"text-align:left\">"."<".$row['category'].">".$row['title']."</td>
+                  <td style=\"text-align:left\"><span style=\"font-size:11pt; font-weight:bold; color:".$color."\">&lt;".$row['category']."&gt;</span>".$row['title']."</td>
                   <td style=\"text-align:center\">".$row['authorID']."</td>
                   <td style=\"text-align:center\">".$row['date']."</td>
                   <td style=\"text-align:right\">".$row['all_hits']."</td>
